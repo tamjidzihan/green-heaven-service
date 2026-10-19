@@ -126,9 +126,12 @@ export const company = {
   managingDirector: "MD. Rabul Karim",
   director: "Sabina Yesmin",
   address:
-    "218/2-1, Achia Mansion, South Paikpara, Mirpur, Dhaka-1216, Bangladesh",
-  phones: ["+880 1713-481317", "+880 1711-348400"],
-  email: "greenheavenservice@gmail.com",
+    "House- 2/1, Block-A, Lalmatia, Mohammadpur, Dhaka-1209, Bangladesh",
+  hotline: "09697228400",
+  tnt: "+8802223314766",
+  mobile: "+88 01711348400",
+  phones: ["09697228400", "+8802223314766", "+88 01711348400"],
+  email: "info@greenheavenserviceltd.com",
   tradeLicense: "TRAD/DNCC/020668/2023",
 } as const;
 ```

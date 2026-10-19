@@ -41,9 +41,12 @@ export function SiteFooter() {
 
           <div className="footer-column footer-contact">
             <h2>Get in touch</h2>
-            {company.phones.map((phone) => (
-              <a href={`tel:${phone.replace(/\s/g, "")}`} key={phone}>
-                <Phone aria-hidden="true" size={15} /> {phone}
+            {company.phoneNumbers.map((phone) => (
+              <a href={`tel:${phone.tel}`} key={phone.label}>
+                <Phone aria-hidden="true" size={15} />
+                <span>
+                  <strong className="footer-phone-tag">{phone.label}:</strong> {phone.number}
+                </span>
               </a>
             ))}
             <p>

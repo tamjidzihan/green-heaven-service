@@ -59,10 +59,15 @@ export function ContactPage() {
             <div className="contact-detail">
               <span><Phone aria-hidden="true" size={18} /></span>
               <div>
-                <h3>Phone</h3>
-                {company.phones.map((phone) => (
-                  <a href={`tel:${phone.replace(/\s/g, "")}`} key={phone}>{phone}</a>
-                ))}
+                <h3>Phone & Hotline</h3>
+                <div className="contact-phone-list">
+                  {company.phoneNumbers.map((item) => (
+                    <div className="contact-phone-item" key={item.label}>
+                      <span className="contact-phone-tag">{item.label}</span>
+                      <a href={`tel:${item.tel}`}>{item.number}</a>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
             <div className="contact-detail">
