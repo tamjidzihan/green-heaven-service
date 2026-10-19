@@ -5,9 +5,9 @@ import { Layout } from "../components/layout/Layout";
 import { AboutPage } from "../pages/AboutPage";
 import { ContactPage } from "../pages/ContactPage";
 
-// import { NotFoundPage } from "../pages/NotFoundPage";
-// import { PrivacyPolicyPage } from "../pages/PrivacyPolicyPage";
-// import { QualitySafetyPage } from "../pages/QualitySafetyPage";
+import { NotFoundPage } from "../pages/NotFoundPage";
+import { PrivacyPolicyPage } from "../pages/PrivacyPolicyPage";
+import { QualitySafetyPage } from "../pages/QualitySafetyPage";
 // import { ServiceDetailPage } from "../pages/ServiceDetailPage";
 // import { ServicesPage } from "../pages/ServicesPage";
 
@@ -19,12 +19,13 @@ export function App() {
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="quality-safety" element={<QualitySafetyPage />} />
+          <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="*" element={<NotFoundPage />} />
           {/*
           <Route path="services" element={<ServicesPage />} />
           <Route path="services/:slug" element={<ServiceDetailPage />} />
-          <Route path="quality-safety" element={<QualitySafetyPage />} />
-          <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
-          <Route path="*" element={<NotFoundPage />} /> */}
+          */}
         </Route>
       </Routes>
     </BrowserRouter>
