@@ -8,6 +8,6 @@ export const company = {
   address:
     "218/2-1, Achia Mansion, South Paikpara, Mirpur, Dhaka-1216, Bangladesh",
   phones: ["+880 1713-481317", "+880 1711-348400"],
-  email: "greenheavenservice@gmail.com",
+  email: "info@greenheavenserviceltd.com",
   tradeLicense: "TRAD/DNCC/020668/2023",
 } as const;
