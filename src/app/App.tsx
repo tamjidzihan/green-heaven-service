@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomePage } from "../pages/HomePage";
 import { Layout } from "../components/layout/Layout";
 import { AboutPage } from "../pages/AboutPage";
-// import { ContactPage } from "../pages/ContactPage";
+import { ContactPage } from "../pages/ContactPage";
 
 // import { NotFoundPage } from "../pages/NotFoundPage";
 // import { PrivacyPolicyPage } from "../pages/PrivacyPolicyPage";
@@ -18,11 +18,11 @@ export function App() {
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="about" element={<AboutPage />} />
+          <Route path="contact" element={<ContactPage />} />
           {/*
           <Route path="services" element={<ServicesPage />} />
           <Route path="services/:slug" element={<ServiceDetailPage />} />
           <Route path="quality-safety" element={<QualitySafetyPage />} />
-          <Route path="contact" element={<ContactPage />} />
           <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="*" element={<NotFoundPage />} /> */}
         </Route>
