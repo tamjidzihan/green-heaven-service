@@ -12,6 +12,7 @@ const links = [
 
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const servicesMenuRef = useRef<HTMLDetailsElement>(null);
   const location = useLocation();
@@ -21,6 +22,15 @@ export function SiteHeader() {
     setMenuOpen(false);
     servicesMenuRef.current?.removeAttribute("open");
   }, [location.pathname]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -39,7 +49,11 @@ export function SiteHeader() {
   }, [menuOpen]);
 
   return (
-    <header className={`site-header${isHome ? " site-header--hero" : ""}`}>
+    <header
+      className={`site-header${isHome ? " site-header--hero" : ""}${
+        isScrolled ? " site-header--scrolled" : ""
+      }`}
+    >
       <div className="site-container site-header__inner">
         <Link
           aria-label="Green Heaven Service home"
