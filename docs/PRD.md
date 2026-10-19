@@ -73,60 +73,26 @@ validate specific buyer personas with the client.
 
 Create the following service directory and individual routes.
 
-### Primary service pages
+### Service Taxonomy (in exact sequence)
 
-1.  **Security Services** --- `/services/security-services`
-    -   Security personnel
-    -   Security consultancy and risk assessments
-    -   Security planning and training
-    -   Employee/background verification
-    -   Mobile escort services
-    -   Cash-in-transit security
-    -   Security equipment installation, maintenance, and rental
-2.  **Cleaning & Housekeeping** --- `/services/cleaning-housekeeping`
-    -   Corporate, industrial, commercial, and residential cleaning
-    -   Janitorial staffing
-    -   Glass and carpet cleaning
-    -   Sofa and chair shampooing
-    -   Floor scrubbing and polishing
-    -   Water-tank cleaning
-    -   Pressure washing and deep cleaning
-3.  **Pest Control** --- `/services/pest-control`
-    -   Cockroach control
-    -   Rodent control
-    -   Pre- and post-construction termite control
-    -   Mosquito and fly control
-    -   Ant and other insect control
-
-### Other listed business activities
-
-4.  **Manpower Outsourcing** --- `/services/manpower-outsourcing`
-5.  **Gardening & Landscaping** --- `/services/gardening-landscaping`
-6.  **Event Management** --- `/services/event-management`
-7.  **Contracting & Supply** --- `/services/contracting-supply`
-8.  **Trading & Import-Export** --- `/services/trading-import-export`
-9.  **Dairy Farm** --- `/services/dairy-farm`
-
-The source profile lists these additional activities but provides less
-detail about their exact scope. Build restrained pages using only
-confirmed descriptions and mark uncertain copy for client confirmation.
-Do not invent operational capabilities, product catalogs, licenses, or
-guarantees.
+1.  **Rafi Real Estate** --- `/services/rafi-real-estate`
+2.  **Green Heaven Security Service** --- `/services/green-heaven-security-service` (alias: `/services/security-services`)
+3.  **Green Heaven Pest Control Service** --- `/services/green-heaven-pest-control-service` (alias: `/services/pest-control`)
+4.  **Green Heaven Cleaning Service** --- `/services/green-heaven-cleaning-service` (alias: `/services/cleaning-housekeeping`)
+5.  **Green Heaven Events Management Service** --- `/services/green-heaven-events-management-service` (alias: `/services/event-management`)
+6.  **R.S Trading Corporation** --- `/services/rs-trading-corporation` (alias: `/services/contracting-supply`)
+7.  **Green Heaven Dairy Farm-1** --- `/services/green-heaven-dairy-farm-1` (alias: `/services/dairy-farm`)
+8.  **Green Heaven Land Keeping** --- `/services/green-heaven-land-keeping` (alias: `/services/gardening-landscaping`)
+9.  **Green Heaven Outsourcing** --- `/services/green-heaven-outsourcing` (alias: `/services/manpower-outsourcing`)
+10. **Green Heaven Export & Import** --- `/services/green-heaven-export-import` (alias: `/services/trading-import-export`)
+11. **First Class Contractor** --- `/services/first-class-contractor`
 
 ## 6. Required Pages
 
 -   `/` --- Home
 -   `/about` --- About Green Heaven Service
 -   `/services` --- All services directory
--   `/services/security-services`
--   `/services/cleaning-housekeeping`
--   `/services/pest-control`
--   `/services/manpower-outsourcing`
--   `/services/gardening-landscaping`
--   `/services/event-management`
--   `/services/contracting-supply`
--   `/services/trading-import-export`
--   `/services/dairy-farm`
+-   `/services/:slug` --- Individual service pages for each of the 11 divisions
 -   `/quality-safety` --- Quality, safety, training, and supervision
     approach
 -   `/contact` --- Contact and enquiry/quotation form

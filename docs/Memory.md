@@ -33,24 +33,19 @@ information.
 
 ## 3. Service Categories
 
-### Detailed categories
+### Services & Business Divisions (in exact sequence)
 
--   Security services
--   Cleaning and housekeeping
--   Pest control
-
-### Other listed business activities
-
--   Manpower outsourcing
--   Gardening and landscaping
--   Event management
--   Contracting and supply
--   Trading and import-export
--   Dairy farm
-
-The company profile provides significantly more detail for the first
-three categories. Treat the remaining categories as listed activities
-whose precise public-facing scope requires client confirmation.
+1. Rafi Real Estate
+2. Green Heaven Security Service
+3. Green Heaven Pest Control Service
+4. Green Heaven Cleaning Service
+5. Green Heaven Events Management Service
+6. R.S Trading Corporation
+7. Green Heaven Dairy Farm-1
+8. Green Heaven Land Keeping
+9. Green Heaven Outsourcing
+10. Green Heaven Export & Import
+11. First Class Contractor
 
 ## 4. Supported Operational Details
 

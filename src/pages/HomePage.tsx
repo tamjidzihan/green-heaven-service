@@ -58,7 +58,7 @@ export function HomePage() {
               All services <ArrowUpRight aria-hidden="true" size={17} />
             </Link>
           </ScrollReveal>
-          <ServiceGrid services={services} />
+          <ServiceGrid services={services.slice(0, 9)} />
         </div>
       </section>
 

@@ -10,7 +10,9 @@ import { NotFoundPage } from "./NotFoundPage";
 
 export function ServiceDetailPage() {
   const { slug } = useParams();
-  const service = services.find((item) => item.slug === slug);
+  const service = services.find(
+    (item) => item.slug === slug || item.aliases?.includes(slug ?? ""),
+  );
 
   if (!service) return <NotFoundPage />;
 

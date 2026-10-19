@@ -22,7 +22,7 @@ export function AboutPage() {
             <p className="eyebrow">Our company</p>
             <h2>Green Heaven Service</h2>
             <p>
-              Established in {company.established}, Green Heaven Service works across security, cleaning and housekeeping, and pest control. The company also lists manpower outsourcing, gardening and landscaping, event management, contracting and supply, trading and import-export, and dairy farm among its business activities.
+              Established in {company.established}, Green Heaven Service operates across Rafi Real Estate, Green Heaven Security Service, Green Heaven Pest Control Service, Green Heaven Cleaning Service, Green Heaven Events Management Service, R.S Trading Corporation, Green Heaven Dairy Farm-1, Green Heaven Land Keeping, Green Heaven Outsourcing, Green Heaven Export & Import, and First Class Contractor.
             </p>
             <p>
               Its stated service philosophy is “{company.philosophy}.”
