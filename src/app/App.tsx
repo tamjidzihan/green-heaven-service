@@ -8,8 +8,8 @@ import { ContactPage } from "../pages/ContactPage";
 import { NotFoundPage } from "../pages/NotFoundPage";
 import { PrivacyPolicyPage } from "../pages/PrivacyPolicyPage";
 import { QualitySafetyPage } from "../pages/QualitySafetyPage";
-// import { ServiceDetailPage } from "../pages/ServiceDetailPage";
-// import { ServicesPage } from "../pages/ServicesPage";
+import { ServiceDetailPage } from "../pages/ServiceDetailPage";
+import { ServicesPage } from "../pages/ServicesPage";
 
 export function App() {
   return (
@@ -22,10 +22,10 @@ export function App() {
           <Route path="quality-safety" element={<QualitySafetyPage />} />
           <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="*" element={<NotFoundPage />} />
-          {/*
+
           <Route path="services" element={<ServicesPage />} />
           <Route path="services/:slug" element={<ServiceDetailPage />} />
-          */}
+
         </Route>
       </Routes>
     </BrowserRouter>
