@@ -15,7 +15,9 @@ export function Layout() {
       <a className="skip-link" href="#main-content">Skip to content</a>
       <SiteHeader />
       <main id="main-content">
-        <Outlet />
+        <div className="route-transition" key={location.pathname}>
+          <Outlet />
+        </div>
       </main>
       <SiteFooter />
     </>

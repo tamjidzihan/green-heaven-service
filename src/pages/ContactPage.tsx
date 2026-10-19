@@ -1,6 +1,7 @@
 import { useRef, useState, type FormEvent } from "react";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import { PageIntro } from "../components/common/PageIntro";
+import { ScrollReveal } from "../components/common/ScrollReveal";
 import { Seo } from "../components/common/Seo";
 import { company } from "../data/company";
 import { services } from "../data/services";
@@ -51,8 +52,8 @@ export function ContactPage() {
         title="Let’s talk about what you need."
       />
       <section className="section section--bone">
-        <div className="site-container contact-grid">
-          <div className="contact-details">
+        <ScrollReveal className="site-container contact-grid" stagger>
+          <div className="contact-details gh-reveal-item">
             <p className="eyebrow">Green Heaven Service</p>
             <h2>Reach out directly.</h2>
             <div className="contact-detail">
@@ -74,7 +75,7 @@ export function ContactPage() {
             </div>
           </div>
 
-          <form className="contact-form" onSubmit={handleSubmit}>
+          <form className="contact-form gh-reveal-item" onSubmit={handleSubmit}>
             <div className="contact-form__heading">
               <div><p className="eyebrow">Enquiry</p><h2>Prepare an email</h2></div>
               <ArrowUpRight aria-hidden="true" size={20} />
@@ -134,7 +135,7 @@ export function ContactPage() {
             </button>
             <p className="form-required-note">* Required field. Please provide either an email or a phone number.</p>
           </form>
-        </div>
+        </ScrollReveal>
       </section>
     </>
   );

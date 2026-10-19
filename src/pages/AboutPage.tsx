@@ -1,5 +1,6 @@
 import { PageIntro } from "../components/common/PageIntro";
 import { ContactCta } from "../components/common/ContactCta";
+import { ScrollReveal } from "../components/common/ScrollReveal";
 import { Seo } from "../components/common/Seo";
 import { company } from "../data/company";
 
@@ -16,8 +17,8 @@ export function AboutPage() {
         title="Service built around people, places, and practical needs."
       />
       <section className="section section--bone">
-        <div className="site-container about-grid">
-          <div>
+        <ScrollReveal className="site-container about-grid" stagger>
+          <div className="gh-reveal-item">
             <p className="eyebrow">Our company</p>
             <h2>Green Heaven Service</h2>
             <p>
@@ -27,7 +28,7 @@ export function AboutPage() {
               Its stated service philosophy is “{company.philosophy}.”
             </p>
           </div>
-          <aside className="company-facts">
+          <aside className="company-facts gh-reveal-item">
             <p className="eyebrow">Company details</p>
             <dl>
               <div><dt>Established</dt><dd>{company.established}</dd></div>
@@ -36,7 +37,7 @@ export function AboutPage() {
               <div><dt>Trade license</dt><dd>{company.tradeLicense}</dd></div>
             </dl>
           </aside>
-        </div>
+        </ScrollReveal>
       </section>
       <ContactCta />
     </>

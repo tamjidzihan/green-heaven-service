@@ -2,6 +2,7 @@ import { ArrowRight, Check, ClipboardCheck } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { ContactCta } from "../components/common/ContactCta";
 import { ParallaxBackground } from "../components/common/ParallaxBackground";
+import { ScrollReveal } from "../components/common/ScrollReveal";
 import { Seo } from "../components/common/Seo";
 import { Breadcrumbs } from "../components/navigation/Breadcrumbs";
 import { services } from "../data/services";
@@ -44,7 +45,7 @@ export function ServiceDetailPage() {
 
       {isAdditional ? (
         <section className="section section--bone">
-          <div className="site-container additional-note">
+          <ScrollReveal className="site-container additional-note">
             <ClipboardCheck aria-hidden="true" size={27} />
             <div>
               <p className="eyebrow">Confirming the scope</p>
@@ -56,11 +57,11 @@ export function ServiceDetailPage() {
                 Contact Green Heaven Service <ArrowRight aria-hidden="true" size={15} />
               </Link>
             </div>
-          </div>
+          </ScrollReveal>
         </section>
       ) : (
         <section className="section section--bone">
-          <div className="site-container detail-content">
+          <ScrollReveal className="site-container detail-content">
             <div>
               <p className="eyebrow">Service offering</p>
               <h2>What this service can include.</h2>
@@ -80,17 +81,17 @@ export function ServiceDetailPage() {
                 Specific requirements should be discussed with the company.
               </p>
             </aside>
-          </div>
+          </ScrollReveal>
         </section>
       )}
 
       <section className="related-services section--soft">
-        <div className="site-container related-services__inner">
-          <div>
+        <ScrollReveal className="site-container related-services__inner" stagger>
+          <div className="gh-reveal-item">
             <p className="eyebrow">Explore further</p>
             <h2>Related services</h2>
           </div>
-          <div className="related-services__links">
+          <div className="related-services__links gh-reveal-item">
             {services
               .filter((item) => item.slug !== service.slug)
               .slice(0, 3)
@@ -100,7 +101,7 @@ export function ServiceDetailPage() {
                 </Link>
               ))}
           </div>
-        </div>
+        </ScrollReveal>
       </section>
       <ContactCta />
     </>

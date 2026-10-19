@@ -4,6 +4,7 @@ import { ContactCta } from "../components/common/ContactCta";
 import { SectionHeading } from "../components/common/SectionHeading";
 import { Seo } from "../components/common/Seo";
 import { ParallaxBackground } from "../components/common/ParallaxBackground";
+import { ScrollReveal } from "../components/common/ScrollReveal";
 import { ServiceGrid } from "../components/services/ServiceGrid";
 import { company } from "../data/company";
 import { services } from "../data/services";
@@ -47,7 +48,7 @@ export function HomePage() {
 
       <section className="section section--bone" id="services">
         <div className="site-container">
-          <div className="section-heading-row">
+          <ScrollReveal className="section-heading-row">
             <SectionHeading
               description="From security and facility care to other listed business activities, explore the services offered by Green Heaven Service."
               eyebrow="What we do"
@@ -56,14 +57,14 @@ export function HomePage() {
             <Link className="text-link" to="/services">
               All services <ArrowUpRight aria-hidden="true" size={17} />
             </Link>
-          </div>
+          </ScrollReveal>
           <ServiceGrid services={services} />
         </div>
       </section>
 
       <section className="section company-band">
-        <div className="site-container company-band__grid">
-          <div className="company-band__identity">
+        <ScrollReveal className="site-container company-band__grid" stagger>
+          <div className="company-band__identity gh-reveal-item">
             <p className="eyebrow">Green Heaven Service</p>
             <h2>Quality service at minimum cost.</h2>
             <p>
@@ -73,7 +74,7 @@ export function HomePage() {
               About the company <ArrowUpRight aria-hidden="true" size={17} />
             </Link>
           </div>
-          <div className="company-band__detail">
+          <div className="company-band__detail gh-reveal-item">
             <div className="company-band__icon"><ShieldCheck aria-hidden="true" size={25} /></div>
             <p className="eyebrow">A considered approach</p>
             <h3>People, planning, and checks.</h3>
@@ -84,11 +85,11 @@ export function HomePage() {
               Explore quality & safety <ArrowRight aria-hidden="true" size={15} />
             </Link>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
 
       <section className="section section--bone quality-preview">
-        <div className="site-container quality-preview__inner">
+        <ScrollReveal className="site-container quality-preview__inner">
           <div>
             <p className="eyebrow">Quality & safety</p>
             <h2>Good service begins with a clear understanding of the site.</h2>
@@ -101,7 +102,7 @@ export function HomePage() {
               How we work <ArrowUpRight aria-hidden="true" size={17} />
             </Link>
           </div>
-        </div>
+        </ScrollReveal>
       </section>
       <ContactCta />
     </>

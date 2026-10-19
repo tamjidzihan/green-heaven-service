@@ -141,18 +141,37 @@ checks pass or any limitation is documented. 4. No unsupported company
 claims were added. 5. Any required client decision is recorded rather
 than guessed.
 
+## Subtle Motion System Implementation
+
+-   [x] Build typed `useScrollReveal` hook with cleanup, single-reveal execution, and viewport thresholds.
+-   [x] Build reusable `ScrollReveal` polymorphic wrapper component with stagger support.
+-   [x] Implement staggered entrance for service cards and grids (60ms step, capped at 300ms max delay).
+-   [x] Implement single container observer pattern for feature groups (`ServiceGrid`, `practice-grid`, `company-band`, `about-grid`, `contact-grid`, `related-services`).
+-   [x] Implement lightweight route transition in `Layout` using React Router DOM v7 (200ms subtle fade + 6px translateY, no blank screens).
+-   [x] Implement micro-interactions for cards (`translateY(-3px)`, subtle border and box-shadow transitions, hover-only media query).
+-   [x] Implement button and interactive link micro-interactions (hover lift, active press states, arrow icon subtle translation).
+-   [x] Guarantee accessibility and reduced-motion compliance (`prefers-reduced-motion: reduce` disables entrance movement, transitions, and delays).
+-   [x] Provide progressive enhancement `.no-js` fallback so content is never hidden if JavaScript fails or is disabled.
+-   [x] Zero new dependencies introduced.
+-   [x] Verify TypeScript compile and build (`npm run build`) and ESLint (`npm run lint`).
+
 ## Implementation Status — 2026-10-19
 
 - Phases 0–5 are implemented in this workspace.
+- Subtle motion system implemented across all primary and service routes:
+  - Scroll reveals on grouped content and section headings.
+  - Staggered entrances for service cards and practice items.
+  - Smooth 200ms SPA route transitions without content flash or blank layout states.
+  - Micro-interactions for buttons, quote CTAs, service cards, practice cards, and links.
+  - Global `prefers-reduced-motion: reduce` support and progressive enhancement `.no-js` fallback.
 - Browser verification covered all required routes plus the not-found
   route, the desktop Services menu, mobile menu Escape/focus behavior,
   320 × 700 and 390 × 844 mobile viewports, and the 900 × 560 short
   desktop viewport.
-- All page heroes now use local, topic-relevant background imagery where
-  available and a subtle scroll-linked parallax shift. Browser checks
-  verified the image position changes on scroll and remains still when
+- All page heroes use local, topic-relevant background imagery where
+  available and a subtle scroll-linked parallax shift, which remains still when
   reduced motion is enabled.
-- `npm run build`, `npm run lint`, and `npm audit` pass.
+- `npm run build` and `npm run lint` pass with zero errors.
 - Contrast has not been quantitatively measured. Reduced-motion behavior
   is implemented in CSS and was browser-tested. No automated test suite
   was present in the initial workspace.

@@ -1,4 +1,5 @@
 import { PageIntro } from "../components/common/PageIntro";
+import { ScrollReveal } from "../components/common/ScrollReveal";
 import { Seo } from "../components/common/Seo";
 
 export function PrivacyPolicyPage() {
@@ -14,7 +15,7 @@ export function PrivacyPolicyPage() {
         title="Privacy policy."
       />
       <section className="section section--bone">
-        <article className="site-container legal-copy">
+        <ScrollReveal as="article" className="site-container legal-copy">
           <h2>Enquiries</h2>
           <p>
             The enquiry form prepares an email draft using your device’s configured email application. The website does not submit that message to a company server. Information in the draft is sent only if you choose to send it from your email application.
@@ -32,7 +33,7 @@ export function PrivacyPolicyPage() {
             For questions about this notice or information you have shared, contact{" "}
             <a href="mailto:greenheavenservice@gmail.com">greenheavenservice@gmail.com</a>.
           </p>
-        </article>
+        </ScrollReveal>
       </section>
     </>
   );

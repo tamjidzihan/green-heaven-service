@@ -1,16 +1,35 @@
+import type { CSSProperties } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import type { Service } from "../../data/services";
 
 type ServiceCardProps = {
   service: Service;
+  staggerIndex?: number;
+  className?: string;
+  style?: CSSProperties;
 };
 
-export function ServiceCard({ service }: ServiceCardProps) {
+export function ServiceCard({
+  service,
+  staggerIndex,
+  className = "",
+  style,
+}: ServiceCardProps) {
   const Icon = service.icon;
+  const cardStyle: CSSProperties = {
+    ...style,
+    ...(staggerIndex !== undefined
+      ? ({ "--stagger-delay": `${Math.min(staggerIndex * 60, 300)}ms` } as CSSProperties)
+      : {}),
+  };
 
   return (
-    <Link className="service-card" to={`/services/${service.slug}`}>
+    <Link
+      className={`service-card ${className}`.trim()}
+      style={cardStyle}
+      to={`/services/${service.slug}`}
+    >
       <div className="service-card__top">
         <span className="service-card__icon">
           <Icon aria-hidden="true" size={22} strokeWidth={1.6} />

@@ -1,6 +1,8 @@
 import { CheckCircle2, ClipboardCheck, GraduationCap, SearchCheck } from "lucide-react";
+import type { CSSProperties } from "react";
 import { PageIntro } from "../components/common/PageIntro";
 import { ContactCta } from "../components/common/ContactCta";
+import { ScrollReveal } from "../components/common/ScrollReveal";
 import { Seo } from "../components/common/Seo";
 
 const practices = [
@@ -41,16 +43,20 @@ export function QualitySafetyPage() {
       />
       <section className="section section--bone">
         <div className="site-container">
-          <div className="practice-grid">
+          <ScrollReveal className="practice-grid" stagger>
             {practices.map(({ icon: Icon, title, text }, index) => (
-              <article className="practice-card" key={title}>
+              <article
+                className="practice-card gh-reveal-item"
+                key={title}
+                style={{ "--stagger-delay": `${index * 60}ms` } as CSSProperties}
+              >
                 <span className="practice-card__number">0{index + 1}</span>
                 <span className="practice-card__icon"><Icon aria-hidden="true" size={23} /></span>
                 <h2>{title}</h2>
                 <p>{text}</p>
               </article>
             ))}
-          </div>
+          </ScrollReveal>
           <p className="qualification-note">
             These are operational practices described in the company information, not quantitative guarantees or certifications.
           </p>
