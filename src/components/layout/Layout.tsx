@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { InitialVisitIntro } from "../common/InitialVisitIntro";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
 
@@ -12,6 +13,7 @@ export function Layout() {
 
   return (
     <>
+      <InitialVisitIntro />
       <a className="skip-link" href="#main-content">Skip to content</a>
       <SiteHeader />
       <main id="main-content">

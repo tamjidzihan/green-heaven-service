@@ -583,6 +583,34 @@ svg {
   }
 }
 
+/* Ripple circles animation */
+@keyframes ripplePulse {
+
+  0%,
+  100% {
+    transform: scale(0.94);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+/* Smooth entrance for the intro overlay */
+@keyframes introFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .route-transition {
   animation: gh-route-enter 200ms cubic-bezier(0.16, 1, 0.3, 1) both;
   will-change: opacity, transform;
@@ -593,7 +621,7 @@ svg {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 550ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 550ms cubic-bezier(0.16, 1, 0.3, 1);
+    transform 550ms cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -608,15 +636,15 @@ svg {
   opacity: 0;
   transform: translateY(16px);
   transition: opacity 550ms cubic-bezier(0.16, 1, 0.3, 1),
-              transform 550ms cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 180ms ease,
-              background-color 180ms ease,
-              box-shadow 180ms ease;
+    transform 550ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease;
   transition-delay: var(--stagger-delay, 0ms),
-                    var(--stagger-delay, 0ms),
-                    0s,
-                    0s,
-                    0s;
+    var(--stagger-delay, 0ms),
+    0s,
+    0s,
+    0s;
   will-change: opacity, transform;
 }
 
@@ -838,7 +866,7 @@ svg {
   letter-spacing: -0.035em;
 }
 
-.service-card > div:last-child > p:last-child {
+.service-card>div:last-child>p:last-child {
   max-width: 34ch;
   margin: 9px 0 0;
   color: #5b6670;
@@ -875,7 +903,7 @@ svg {
   line-height: 1.08;
 }
 
-.company-band__identity > p:not(.eyebrow) {
+.company-band__identity>p:not(.eyebrow) {
   max-width: 53ch;
   margin: 22px 0 25px;
   color: #c3cad6;
@@ -909,7 +937,7 @@ svg {
   letter-spacing: -0.035em;
 }
 
-.company-band__detail > p:not(.eyebrow) {
+.company-band__detail>p:not(.eyebrow) {
   margin: 13px 0 21px;
   color: #c3cad6;
   font-size: 14px;
@@ -968,7 +996,7 @@ svg {
   font-size: clamp(2rem, 3.6vw, 3rem);
 }
 
-.contact-cta__inner > div > p:last-child {
+.contact-cta__inner>div>p:last-child {
   margin: 15px 0 0;
   color: #d1dbe2;
   font-size: 15px;
@@ -1045,7 +1073,7 @@ svg {
   content: "";
 }
 
-.detail-hero > .site-container {
+.detail-hero>.site-container {
   position: relative;
   z-index: 2;
 }
@@ -1089,7 +1117,7 @@ svg {
   color: var(--ink);
 }
 
-.detail-hero__content > div:first-child > p:not(.eyebrow) {
+.detail-hero__content>div:first-child>p:not(.eyebrow) {
   max-width: 66ch;
   margin: 20px 0 26px;
   color: #c3cad6;
@@ -1221,7 +1249,7 @@ svg {
   gap: 23px;
 }
 
-.additional-note > svg {
+.additional-note>svg {
   color: #42667e;
 }
 
@@ -1296,7 +1324,7 @@ svg {
   margin-bottom: 20px;
 }
 
-.about-grid > div > p:not(.eyebrow) {
+.about-grid>div>p:not(.eyebrow) {
   max-width: 67ch;
   color: #59656e;
   font-size: 15px;
@@ -1430,7 +1458,7 @@ svg {
   border-top: 1px solid #d8dddf;
 }
 
-.contact-detail > span {
+.contact-detail>span {
   display: grid;
   width: 38px;
   height: 38px;
@@ -1510,7 +1538,7 @@ svg {
   font-weight: 600;
 }
 
-.contact-form label > span {
+.contact-form label>span {
   color: #9d483a;
 }
 
@@ -1545,7 +1573,7 @@ svg {
   color: #68747d;
 }
 
-.contact-form__heading + .contact-form__note {
+.contact-form__heading+.contact-form__note {
   margin-top: -5px;
 }
 
@@ -1629,7 +1657,7 @@ svg {
   letter-spacing: -0.06em;
 }
 
-.not-found__content > p:not(.eyebrow) {
+.not-found__content>p:not(.eyebrow) {
   margin: 15px 0 25px;
   color: #d4dce2;
 }
@@ -1648,13 +1676,13 @@ svg {
   padding-bottom: 57px;
 }
 
-.footer-brand > p {
+.footer-brand>p {
   margin: 20px 0 13px;
   color: #c3cad6;
   font-size: 13px;
 }
 
-.footer-brand > a:last-child {
+.footer-brand>a:last-child {
   color: #e2eaf0;
   font-size: 13px;
   text-decoration: none;
@@ -1676,8 +1704,8 @@ svg {
   text-transform: uppercase;
 }
 
-.footer-column > a,
-.footer-column > p {
+.footer-column>a,
+.footer-column>p {
   display: flex;
   align-items: flex-start;
   gap: 8px;
@@ -1688,16 +1716,16 @@ svg {
   text-decoration: none;
 }
 
-.footer-column > a:hover,
-.footer-brand > a:last-child:hover,
+.footer-column>a:hover,
+.footer-brand>a:last-child:hover,
 .footer-bottom a:hover {
   color: white;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.footer-contact > a svg,
-.footer-contact > p svg {
+.footer-contact>a svg,
+.footer-contact>p svg {
   flex: 0 0 auto;
   margin-top: 1px;
   color: #8fb4d9;
@@ -1901,7 +1929,7 @@ svg {
     margin-bottom: 20px;
   }
 
-  .section-heading-row > .text-link {
+  .section-heading-row>.text-link {
     margin-bottom: 28px;
   }
 
@@ -2009,7 +2037,7 @@ svg {
     font-size: clamp(2rem, 9vw, 2.9rem);
   }
 
-  .company-band__identity > p:not(.eyebrow) {
+  .company-band__identity>p:not(.eyebrow) {
     font-size: 14px;
   }
 
@@ -2073,7 +2101,7 @@ svg {
     gap: 30px;
   }
 
-  .detail-hero__content > div:first-child > p:not(.eyebrow) {
+  .detail-hero__content>div:first-child>p:not(.eyebrow) {
     font-size: 14px;
   }
 
@@ -2239,6 +2267,7 @@ svg {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -2291,4 +2320,3 @@ svg {
   transition: none !important;
   animation: none !important;
 }
-
