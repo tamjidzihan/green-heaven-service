@@ -354,7 +354,7 @@ svg {
   min-height: 80px;
   border-bottom: 1px solid rgba(245, 247, 250, 0.12);
   background-color: rgba(4, 6, 10, 0.28);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(10px);
   color: var(--ink);
   transition: min-height var(--dur-med) var(--ease-out-expo),
@@ -2505,7 +2505,7 @@ svg {
   }
 
   .company-band__detail {
-    padding: 28px 0 0;
+    padding: 28px 24px 24px;
     border-top: 1px solid rgba(245, 247, 250, 0.2);
     border-left: 0;
   }
