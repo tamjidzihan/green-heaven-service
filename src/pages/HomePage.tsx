@@ -8,6 +8,7 @@ import { ScrollReveal } from "../components/common/ScrollReveal";
 import { ServiceGrid } from "../components/services/ServiceGrid";
 import { company } from "../data/company";
 import { services } from "../data/services";
+import { TestimonialsSection } from "../components/sections/TestimonialsSection";
 
 export function HomePage() {
   return (
@@ -104,6 +105,7 @@ export function HomePage() {
           </div>
         </ScrollReveal>
       </section>
+      <TestimonialsSection />
       <ContactCta />
     </>
   );

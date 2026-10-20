@@ -3,6 +3,7 @@ import { ContactCta } from "../components/common/ContactCta";
 import { ScrollReveal } from "../components/common/ScrollReveal";
 import { Seo } from "../components/common/Seo";
 import { company } from "../data/company";
+import { TestimonialsSection } from "../components/sections/TestimonialsSection";
 
 export function AboutPage() {
   return (
@@ -39,6 +40,7 @@ export function AboutPage() {
           </aside>
         </ScrollReveal>
       </section>
+      <TestimonialsSection />
       <ContactCta />
     </>
   );
