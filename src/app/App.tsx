@@ -10,11 +10,21 @@ import { PrivacyPolicyPage } from "../pages/PrivacyPolicyPage";
 import { QualitySafetyPage } from "../pages/QualitySafetyPage";
 import { ServiceDetailPage } from "../pages/ServiceDetailPage";
 import { ServicesPage } from "../pages/ServicesPage";
+import { AuthLayout } from "../components/auth/AuthLayout";
+import { LoginPage } from "../pages/auth/LoginPage";
+import { RegisterPage } from "../pages/auth/RegisterPage";
 
 export function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Authentication routes with dedicated responsive layout */}
+        <Route element={<AuthLayout />}>
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+        </Route>
+
+        {/* Marketing and corporate site routes */}
         <Route element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="services" element={<ServicesPage />} />
