@@ -1,0 +1,29 @@
+name: Sync Client Branch
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'client/**'
+
+permissions:
+  contents: write
+
+jobs:
+  sync-client-branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract client subtree and push to client branch
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Extract client folder into a subtree branch and force-push to 'client'
+          git subtree split --prefix=client -b sync-client-branch
+          git push -f origin sync-client-branch:client
