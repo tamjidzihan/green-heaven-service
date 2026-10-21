@@ -1,0 +1,41 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import { HomePage } from "../pages/HomePage";
+import { Layout } from "../components/layout/Layout";
+import { AboutPage } from "../pages/AboutPage";
+import { ContactPage } from "../pages/ContactPage";
+
+import { NotFoundPage } from "../pages/NotFoundPage";
+import { PrivacyPolicyPage } from "../pages/PrivacyPolicyPage";
+import { QualitySafetyPage } from "../pages/QualitySafetyPage";
+import { ServiceDetailPage } from "../pages/ServiceDetailPage";
+import { ServicesPage } from "../pages/ServicesPage";
+import { AuthLayout } from "../components/auth/AuthLayout";
+import { LoginPage } from "../pages/auth/LoginPage";
+import { RegisterPage } from "../pages/auth/RegisterPage";
+
+export function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        {/* Authentication routes with dedicated responsive layout */}
+        <Route element={<AuthLayout />}>
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+        </Route>
+
+        {/* Marketing and corporate site routes */}
+        <Route element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="services" element={<ServicesPage />} />
+          <Route path="about" element={<AboutPage />} />
+          <Route path="quality-safety" element={<QualitySafetyPage />} />
+          <Route path="contact" element={<ContactPage />} />
+          <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="services/:slug" element={<ServiceDetailPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
