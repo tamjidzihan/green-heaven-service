@@ -82,21 +82,6 @@ export function AuthLayout() {
         {/* Left Column: Form Canvas */}
         <section aria-label="Authentication Form" className="auth-form-column">
           <div className="auth-form-column__inner">
-            {/* Mobile-only brand badge */}
-            <div className="auth-mobile-brand">
-              <Link aria-label="Green Heaven Service homepage" to="/">
-                <img
-                  alt="Green Heaven Service"
-                  className="auth-mobile-brand__logo"
-                  src="/assets/greenheavenservice_logo.svg"
-                />
-              </Link>
-              <div className="auth-mobile-brand__text">
-                <span className="auth-mobile-brand__title">Green Heaven Service</span>
-                <span className="auth-mobile-brand__subtitle">{company.slogan}</span>
-              </div>
-            </div>
-
             {/* Routed Form with subtle entrance transition */}
             <div className="auth-form-wrapper" key={location.pathname}>
               <Outlet />
