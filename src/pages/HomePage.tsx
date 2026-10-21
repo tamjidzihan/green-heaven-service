@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ArrowDown, ArrowRight, ArrowUpRight, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ContactCta } from "../components/common/ContactCta";
@@ -10,7 +11,33 @@ import { company } from "../data/company";
 import { services } from "../data/services";
 import { TestimonialsSection } from "../components/sections/TestimonialsSection";
 
+const HERO_SLIDES = [
+  {
+    src: "/assets/security-hero.jpg",
+    title: "Security Services",
+  },
+  {
+    src: "/assets/cleaning-hero.jpg",
+    title: "Cleaning & Housekeeping",
+  },
+  {
+    src: "/assets/facility-hero.jpg",
+    title: "Facility Management",
+  },
+  {
+    src: "/assets/landscaping-hero.jpg",
+    title: "Landscaping & Gardening",
+  },
+  {
+    src: "/assets/dairy-hero.jpg",
+    title: "Agricultural & Dairy Farm",
+  },
+];
+
 export function HomePage() {
+  const [activeHeroIndex, setActiveHeroIndex] = useState(0);
+  const heroImageSources = HERO_SLIDES.map((slide) => slide.src);
+
   return (
     <>
       <Seo
@@ -20,7 +47,10 @@ export function HomePage() {
       <section className="home-hero">
         <ParallaxBackground
           className="home-hero__background"
-          src="/assets/security-hero.jpg"
+          images={heroImageSources}
+          interval={4000}
+          activeIndex={activeHeroIndex}
+          onIndexChange={setActiveHeroIndex}
         />
         <div aria-hidden="true" className="home-hero__haze" />
         <div aria-hidden="true" className="home-hero__floor" />
@@ -41,9 +71,30 @@ export function HomePage() {
               </Link>
             </div>
           </div>
-          <a className="hero-scroll" href="#services">
-            <span>Scroll to explore</span><ArrowDown aria-hidden="true" size={15} />
-          </a>
+          <div className="home-hero__bottom">
+            <div
+              className="hero-indicators"
+              role="tablist"
+              aria-label="Background image slides"
+            >
+              {HERO_SLIDES.map((slide, index) => (
+                <button
+                  key={slide.src}
+                  type="button"
+                  role="tab"
+                  aria-selected={index === activeHeroIndex}
+                  aria-label={`Slide ${index + 1}: ${slide.title}`}
+                  title={slide.title}
+                  className={`hero-indicator-dot${index === activeHeroIndex ? " hero-indicator-dot--active" : ""
+                    }`}
+                  onClick={() => setActiveHeroIndex(index)}
+                />
+              ))}
+            </div>
+            <a className="hero-scroll" href="#services">
+              <span>Scroll to explore</span><ArrowDown aria-hidden="true" size={15} />
+            </a>
+          </div>
         </div>
       </section>
 
