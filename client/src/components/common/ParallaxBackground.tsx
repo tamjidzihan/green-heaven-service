@@ -1,16 +1,58 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type ParallaxBackgroundProps = {
-  src: string;
+  src?: string;
+  images?: string[];
+  interval?: number;
   className?: string;
+  activeIndex?: number;
+  onIndexChange?: (index: number) => void;
 };
 
 export function ParallaxBackground({
   src,
+  images,
+  interval = 4000,
   className = "",
+  activeIndex: controlledIndex,
+  onIndexChange,
 }: ParallaxBackgroundProps) {
   const backgroundRef = useRef<HTMLDivElement>(null);
+  const imageList = useMemo(
+    () => (images && images.length > 0 ? images : src ? [src] : []),
+    [images, src],
+  );
+  const [internalIndex, setInternalIndex] = useState(0);
 
+  const isControlled = typeof controlledIndex === "number";
+  const currentIndex = isControlled ? controlledIndex : internalIndex;
+
+  // Preload images to prevent blank frames or transition flashes
+  useEffect(() => {
+    if (imageList.length <= 1) return;
+    imageList.forEach((imgSrc) => {
+      const img = new Image();
+      img.src = imgSrc;
+    });
+  }, [imageList]);
+
+  // Automatic smooth transition with interval (defaults to 3s / 3000ms)
+  useEffect(() => {
+    if (imageList.length <= 1) return;
+
+    const timer = setInterval(() => {
+      const nextIndex = (currentIndex + 1) % imageList.length;
+      if (isControlled && onIndexChange) {
+        onIndexChange(nextIndex);
+      } else {
+        setInternalIndex(nextIndex);
+      }
+    }, interval);
+
+    return () => clearInterval(timer);
+  }, [imageList.length, interval, isControlled, onIndexChange, currentIndex]);
+
+  // Parallax scroll position tracking
   useEffect(() => {
     const background = backgroundRef.current;
     if (!background) return;
@@ -50,7 +92,22 @@ export function ParallaxBackground({
       className={`hero-parallax ${className}`.trim()}
       ref={backgroundRef}
     >
-      <img alt="" className="hero-parallax__image" src={src} />
+      {imageList.map((imgSrc, index) => {
+        const isActive = index === currentIndex;
+        return (
+          <img
+            key={imgSrc}
+            alt=""
+            className={`hero-parallax__image ${
+              isActive
+                ? "hero-parallax__image--active"
+                : "hero-parallax__image--inactive"
+            }`}
+            src={imgSrc}
+            loading={index === 0 ? "eager" : "lazy"}
+          />
+        );
+      })}
     </div>
   );
 }
