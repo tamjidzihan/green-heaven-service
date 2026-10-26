@@ -150,10 +150,11 @@ svg {
   text-transform: uppercase;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(12px);
-  transition: opacity var(--dur-fast) var(--ease-out-expo),
-    transform var(--dur-fast) var(--ease-out-expo),
-    color var(--dur-fast) var(--ease-out-expo);
+  transform: translateY(8px);
+  transition: opacity 500ms var(--ease-out-expo),
+    transform 500ms var(--ease-out-expo),
+    color var(--dur-fast) var(--ease-out-expo),
+    visibility 0s linear 500ms;
   visibility: hidden;
 }
 
@@ -161,6 +162,7 @@ svg {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
+  transition-delay: 0s;
   visibility: visible;
 }
 
@@ -1029,7 +1031,6 @@ svg {
   justify-content: flex-end;
   padding-top: 150px;
   padding-bottom: 38px;
-  animation: gh-rise-in 850ms 140ms ease-out both;
 }
 
 .site-header--hero {
@@ -1052,6 +1053,7 @@ svg {
   font-size: 12px;
   font-weight: 550;
   display: flex;
+  animation: gh-hero-line-in 700ms var(--ease-out-expo) 140ms both;
 }
 
 .hero-eyebrow span {
@@ -1069,10 +1071,20 @@ svg {
   line-height: 1.01;
 }
 
-.home-hero h1 span {
+.home-hero h1 .hero-title-line {
+  display: block;
+  animation: gh-hero-line-in 760ms var(--ease-out-expo) both;
+}
+
+.home-hero h1 .hero-title-line:first-child {
+  animation-delay: 360ms;
+}
+
+.home-hero h1 .hero-title-line--accent {
   background: linear-gradient(135deg, #f5f7fa 0%, #b8d0e7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation-delay: 570ms;
 }
 
 .home-hero__description {
@@ -1082,6 +1094,7 @@ svg {
   font-size: clamp(1rem, 1.35vw, 1.13rem);
   font-weight: 350;
   line-height: 1.65;
+  animation: gh-hero-line-in 760ms var(--ease-out-expo) 800ms both;
 }
 
 .home-hero__actions {
@@ -1089,6 +1102,15 @@ svg {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 29px;
+}
+
+.home-hero__actions .button {
+  animation: gh-hero-line-in 760ms var(--ease-out-expo) both;
+}
+
+.home-hero__actions .button:first-child,
+.home-hero__actions .button:last-child {
+  animation-delay: 1030ms;
 }
 
 .hero-scroll {
@@ -1102,6 +1124,12 @@ svg {
   display: flex;
   gap: 12px;
   text-decoration: none;
+  animation: gh-hero-line-in 760ms var(--ease-out-expo) 1400ms both;
+}
+
+.hero-indicators,
+.hero-scroll {
+  animation-delay: 1400ms;
 }
 
 .hero-scroll:hover {
@@ -1121,6 +1149,22 @@ svg {
   flex-wrap: wrap;
   gap: 16px;
   margin-top: 0;
+}
+
+.hero-indicators {
+  animation: gh-hero-line-in 760ms var(--ease-out-expo) both;
+}
+
+@keyframes gh-hero-line-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-indicators {

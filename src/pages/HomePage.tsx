@@ -68,7 +68,12 @@ export function HomePage() {
         <div className="site-container home-hero__content">
           <div className="home-hero__copy">
             <p className="hero-eyebrow"><span /> Serving Bangladesh since {company.established}</p>
-            <h1>Protection You Trust. <span>Service You Can Rely On.</span></h1>
+            <h1>
+              <span className="hero-title-line">Protection You Trust.</span>
+              <span className="hero-title-line hero-title-line--accent">
+                Service You Can Rely On.
+              </span>
+            </h1>
             <p className="home-hero__description">
               Security, cleaning and housekeeping, pest control, and supporting services for your workplace and property.
             </p>
