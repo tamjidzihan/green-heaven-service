@@ -24,6 +24,7 @@ export type Service = {
   category: "primary" | "additional";
   offerings: string[];
   approach: string[];
+  detailsConfirmed?: boolean;
 };
 
 export const services: Service[] = [
@@ -31,21 +32,23 @@ export const services: Service[] = [
     slug: "rafi-real-estate",
     title: "Rafi Real Estate",
     shortDescription:
-      "Property consultation, residential and commercial real estate solutions.",
+      "Residential development guided by quality materials, thoughtful planning, and a commitment to safe housing.",
     intro:
-      "Rafi Real Estate is an active business concern under Green Heaven Service, providing real estate advisory, property management, and residential and commercial leasing support. Contact us to discuss your property requirements.",
+      "Rafi Real Estat Ltd. develops residential buildings, with an emphasis on quality materials, earthquake-conscious design, and environmentally mindful concepts. The company says its engineers and planning team work toward completing projects before the agreed apartment handover time.",
     heroImage: "/assets/rafi-real-estate-hero.jpg",
     icon: Building2,
     category: "additional",
     offerings: [
-      "Residential and commercial property consultation",
-      "Real estate advisory and asset management",
-      "Site evaluation and leasing coordination",
+      "Residential building development",
+      "Luxurious residential buildings using quality materials",
+      "Innovative building design using modern housing technology",
+      "Earthquake-conscious and environmentally mindful building concepts",
     ],
     approach: [
-      "Property requirements are evaluated based on individual and commercial needs.",
-      "Professional coordination and verified documentation support.",
+      "Engineers and planning teams work toward completing projects before the agreed apartment handover time.",
+      "Quality, trust, commitment, and dependability guide relationships with customers and land owners.",
     ],
+    detailsConfirmed: true,
   },
   {
     slug: "green-heaven-security-service",
@@ -54,17 +57,18 @@ export const services: Service[] = [
     shortDescription:
       "Security personnel, consultancy, and risk-managed protection shaped around site needs.",
     intro:
-      "Green Heaven Security Service lists security personnel, consultancy, risk assessment, planning, training, verification, escort, cash-in-transit, and equipment support among its security services.",
+      "Green Heaven Security Service describes security and consultancy support for offices, factories, sites, and field installations. Its listed capabilities include site surveys, security planning, staff training and vetting, escort, cash-in-transit, and security equipment support.",
     heroImage: "/assets/green-heaven-security-service-hero.jpg",
     icon: ShieldCheck,
     category: "primary",
     offerings: [
       "Security personnel",
-      "Security consultancy and risk assessments",
-      "Security planning and training",
-      "Employee and background verification",
-      "Mobile escort services",
-      "Cash-in-transit security",
+      "Security surveys, inspections, checks, and threat assessments",
+      "Security planning and on-site personnel for offices, factories, and field installations",
+      "Security training, verification, scanning, and vetting",
+      "Route reconnaissance and mobile escort by land, waterway, and air",
+      "Fire-alarm and firefighting training",
+      "Cash-in-transit security and liaison support with authorities",
       "Security equipment installation, maintenance, and rental",
     ],
     approach: [
@@ -88,12 +92,11 @@ export const services: Service[] = [
       "Cockroach control",
       "Rodent control",
       "Pre- and post-construction termite control",
-      "Mosquito and fly control",
-      "Ant and other insect control",
+      "Mosquito, fly, ant, and other insect control",
     ],
     approach: [
-      "Site evaluations and risk assessment support planning.",
-      "Health and safety training is part of the stated operating approach.",
+      "The pest and site are assessed to determine a suitable control approach.",
+      "Methods vary by setting; the profile describes bait options for sensitive sites and traps or glue boards for rodent control.",
       "Specific treatment methods and products are confirmed for each site.",
     ],
   },
@@ -110,17 +113,17 @@ export const services: Service[] = [
     category: "primary",
     offerings: [
       "Corporate, industrial, commercial, and residential cleaning",
-      "Janitorial staffing",
-      "Glass and carpet cleaning",
-      "Sofa and chair shampooing",
-      "Floor scrubbing and polishing",
-      "Water-tank cleaning",
-      "Pressure washing and deep cleaning",
+      "Janitorial staffing, including tea boys, messengers, peons, gardeners, and electricians",
+      "Glass cleaning and carpet, chair, and sofa shampooing",
+      "Floor scrubbing, polishing, and waxing",
+      "Water-reservoir tank cleaning",
+      "Power washing of surroundings and pavement",
+      "Full-premises master cleaning",
     ],
     approach: [
       "Cleaning staff receive a stated seven-day training period.",
-      "Work schedules and attendance are managed.",
-      "Project coordinators, quality checks, standby staff, and worker replacement are supported operational practices.",
+      "Work schedules, attendance, and regular customer communication are part of the operating approach.",
+      "Project coordinators, quality checks, standby staff, and worker replacement support service continuity.",
     ],
   },
   {
