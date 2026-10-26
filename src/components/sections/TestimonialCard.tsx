@@ -1,34 +1,31 @@
+import { Quote } from "lucide-react";
 import type { Testimonial } from "../../data/testimonials";
 
-interface TestimonialCardProps {
+type TestimonialCardProps = {
   testimonial: Testimonial;
-  className?: string;
-}
+};
 
-export function TestimonialCard({ testimonial, className = "" }: TestimonialCardProps) {
+export function TestimonialCard({ testimonial }: TestimonialCardProps) {
   const { quote, author, role, organization, initials } = testimonial;
 
   return (
-    <article
-      className={`testimonial-card${className ? ` ${className}` : ""}`}
-      tabIndex={0}
-    >
+    <article className="testimonial-card">
+      <Quote aria-hidden="true" className="testimonial-card__quote-icon" size={22} />
+      <blockquote>
+        <p>“{quote}”</p>
+      </blockquote>
       <div className="testimonial-card__header">
-        <div aria-hidden="true" className="testimonial-card__avatar">
+        <span aria-hidden="true" className="testimonial-card__avatar">
           {initials}
-        </div>
+        </span>
         <div className="testimonial-card__meta">
-          <h3 className="testimonial-card__author">{author}</h3>
-          <p className="testimonial-card__role">
+          <h3>{author}</h3>
+          <p>
             {role}
-            {organization ? <span className="testimonial-card__org"> • {organization}</span> : null}
+            {organization ? <span> · {organization}</span> : null}
           </p>
         </div>
       </div>
-
-      <blockquote className="testimonial-card__quote">
-        <p>&ldquo;{quote}&rdquo;</p>
-      </blockquote>
     </article>
   );
 }

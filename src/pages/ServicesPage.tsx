@@ -11,18 +11,18 @@ export function ServicesPage() {
     <>
       <Seo
         title="Services & Business Concerns | Green Heaven Service"
-        description="Explore Green Heaven Service's complete range of security, facility care, real estate, trading, contracting, and affiliated business divisions."
+        description="Explore the Green Heaven Service portfolio, including detailed security, cleaning, pest-control, and Rafi Real Estate information."
       />
       <PageIntro
-        description="Explore our full portfolio of specialized services and affiliated business concerns, structured to deliver reliable support across properties, operations, and trade."
+        description="Browse the services described in detail in the company materials and other listed business concerns. Where an activity's scope is not documented, contact the company to confirm current details."
         eyebrow="Our services"
-        title="Comprehensive solutions for property, operations, and trade."
+        title="Core services and other listed activities."
       />
       <section className="section section--bone">
         <div className="site-container">
           <ScrollReveal>
             <SectionHeading
-              description="Browse our specialized services and active business divisions below. Select any division to learn more or prepare an enquiry."
+              description="Explore security, cleaning, pest control, and Rafi Real Estate. The remaining business concerns are listed with clear notes where their scope needs confirmation."
               eyebrow="Service catalogue"
               title="All services & business divisions."
             />

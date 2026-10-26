@@ -30,6 +30,9 @@ export function ServiceCard({
       style={cardStyle}
       to={`/services/${service.slug}`}
     >
+      <span aria-hidden="true" className="service-card__backdrop">
+        <img alt="" decoding="async" loading="lazy" src={service.heroImage} />
+      </span>
       <div className="service-card__top">
         <span className="service-card__icon">
           <Icon aria-hidden="true" size={22} strokeWidth={1.6} />
