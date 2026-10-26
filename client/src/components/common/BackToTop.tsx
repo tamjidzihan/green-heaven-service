@@ -1,15 +1,31 @@
 import { ArrowUp } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
+  const hideTimeout = useRef<number | undefined>(undefined);
 
   useEffect(() => {
-    const updateVisibility = () => setIsVisible(window.scrollY > 500);
+    const updateVisibility = () => {
+      window.clearTimeout(hideTimeout.current);
+      if (window.scrollY <= 500) {
+        setIsVisible(false);
+        return;
+      }
+
+      setIsVisible(true);
+      hideTimeout.current = window.setTimeout(() => {
+        setIsVisible(false);
+      }, 3000);
+    };
+
     updateVisibility();
     window.addEventListener("scroll", updateVisibility, { passive: true });
 
-    return () => window.removeEventListener("scroll", updateVisibility);
+    return () => {
+      window.clearTimeout(hideTimeout.current);
+      window.removeEventListener("scroll", updateVisibility);
+    };
   }, []);
 
   const scrollToTop = () => {
