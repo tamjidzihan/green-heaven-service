@@ -41,7 +41,7 @@ Configure the production host to serve the SPA entry point for these direct rout
 
 ## Content, assets, and integrations
 
-Company and service details are centralized in `client/src/data/`. Additional listed activities are intentionally described conservatively because their scope has not been confirmed.
+Company and service details are centralized in `client/src/data/`. Security, cleaning, and pest-control details are based on the supplied company profile; Rafi Real Estate details are based on its supplied text profile. Other listed activities are described conservatively where the reference materials do not document their scope. The homepage features security, cleaning, and pest control as the three services described in detail in the company profile.
 
 Hero backgrounds use locally stored Unsplash photographs with a subtle scroll-linked parallax effect. The motion is disabled when reduced motion is requested. Assets are decorative stock imagery—not depictions of Green Heaven Service staff, customers, or projects—and are subject to the [Unsplash License](https://unsplash.com/license):
 
@@ -55,4 +55,4 @@ The office image is used as a neutral fallback where a suitable service-specific
 
 The enquiry form does not submit data to a server. It prepares a `mailto:` draft addressed to the confirmed company email; the visitor must send the message from their email application. No backend or form provider is configured.
 
-The production domain, hosting-specific privacy practices, official logo and brand colors, Bangla localization, and detailed scope for six additional activities remain to be confirmed.
+The production domain, hosting-specific privacy practices, official logo and brand colors, and Bangla localization remain to be confirmed. Detailed current scope also remains to be confirmed for Events Management, R.S Trading Corporation, Dairy Farm-1, Land Keeping, Export & Import, and First Class Contractor. The source profile additionally lists Green Heaven Trading and Green Heaven All Kinds of Supplier without detailed descriptions; outsourcing information is limited to a manpower-provision statement.

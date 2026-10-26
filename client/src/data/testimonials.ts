@@ -7,10 +7,6 @@ export interface Testimonial {
   initials: string;
 }
 
-/**
- * Client feedback and service evaluations representing commercial facility partners,
- * residential estate management, and corporate offices served by Green Heaven Service.
- */
 export const row1Testimonials: Testimonial[] = [
   {
     id: "fb-1",

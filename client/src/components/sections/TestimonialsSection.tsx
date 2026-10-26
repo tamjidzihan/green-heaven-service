@@ -1,51 +1,66 @@
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { useRef } from "react";
 import { row1Testimonials, row2Testimonials } from "../../data/testimonials";
-import { TestimonialCard } from "./TestimonialCard";
 import { ScrollReveal } from "../common/ScrollReveal";
+import { TestimonialCard } from "./TestimonialCard";
+
+const testimonials = [...row1Testimonials, ...row2Testimonials];
 
 export function TestimonialsSection() {
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: -1 | 1) => {
+    const track = trackRef.current;
+    if (!track) return;
+    track.scrollBy({
+      left: direction * track.clientWidth * 0.8,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+    });
+  };
+
   return (
     <section aria-labelledby="testimonials-heading" className="section testimonials-section">
       <div className="site-container">
         <ScrollReveal className="testimonials-section__header">
-          <p className="eyebrow">Client Feedback</p>
-          <h2 id="testimonials-heading">Built on Trust. Driven by Service.</h2>
-          <p className="testimonials-section__description">
-            Discover what clients have to say about their experience with Green Heaven Service.
-          </p>
+          <div>
+            <p className="eyebrow">Client feedback</p>
+            <h2 id="testimonials-heading">Built on trust. Driven by service.</h2>
+            <p>
+              Feedback shared by clients across security, cleaning, pest
+              control, and property services.
+            </p>
+          </div>
+          <div aria-label="Testimonial controls" className="testimonials-controls">
+            <button
+              aria-label="Scroll testimonials left"
+              className="testimonials-controls__button"
+              onClick={() => scroll(-1)}
+              type="button"
+            >
+              <ArrowLeft aria-hidden="true" size={18} />
+            </button>
+            <button
+              aria-label="Scroll testimonials right"
+              className="testimonials-controls__button"
+              onClick={() => scroll(1)}
+              type="button"
+            >
+              <ArrowRight aria-hidden="true" size={18} />
+            </button>
+          </div>
         </ScrollReveal>
       </div>
-
-      {/* Marquee Viewport with Edge Masking */}
-      <div className="testimonials-viewport">
-        {/* Row 1: Moving Right to Left */}
-        <div className="testimonial-marquee-track testimonial-marquee-track--left">
-          <div className="testimonial-marquee-group">
-            {row1Testimonials.map((t) => (
-              <TestimonialCard key={t.id} testimonial={t} />
-            ))}
-          </div>
-          {/* Duplicate set for seamless continuous loop */}
-          <div aria-hidden="true" className="testimonial-marquee-group">
-            {row1Testimonials.map((t) => (
-              <TestimonialCard className="pointer-events-none" key={`dup-${t.id}`} testimonial={t} />
-            ))}
-          </div>
-        </div>
-
-        {/* Row 2: Moving Left to Right */}
-        <div className="testimonial-marquee-track testimonial-marquee-track--right">
-          <div className="testimonial-marquee-group">
-            {row2Testimonials.map((t) => (
-              <TestimonialCard key={t.id} testimonial={t} />
-            ))}
-          </div>
-          {/* Duplicate set for seamless continuous loop */}
-          <div aria-hidden="true" className="testimonial-marquee-group">
-            {row2Testimonials.map((t) => (
-              <TestimonialCard className="pointer-events-none" key={`dup-${t.id}`} testimonial={t} />
-            ))}
-          </div>
-        </div>
+      <div
+        aria-label="Client testimonials"
+        className="testimonials-viewport"
+        ref={trackRef}
+        tabIndex={0}
+      >
+        {testimonials.map((testimonial) => (
+          <TestimonialCard key={testimonial.id} testimonial={testimonial} />
+        ))}
       </div>
     </section>
   );

@@ -1,15 +1,24 @@
 import { useState } from "react";
-import { ArrowDown, ArrowRight, ArrowUpRight, Building2, Leaf, ShieldCheck } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ContactCta } from "../components/common/ContactCta";
 import { SectionHeading } from "../components/common/SectionHeading";
 import { Seo } from "../components/common/Seo";
 import { ParallaxBackground } from "../components/common/ParallaxBackground";
 import { ScrollReveal } from "../components/common/ScrollReveal";
+import { ServiceFeature } from "../components/sections/ServiceFeature";
+import { TestimonialsSection } from "../components/sections/TestimonialsSection";
 import { ServiceGrid } from "../components/services/ServiceGrid";
 import { company } from "../data/company";
 import { services } from "../data/services";
-import { TestimonialsSection } from "../components/sections/TestimonialsSection";
+
+const homepageFeatures = services
+  .filter((service) => service.homepageFeature)
+  .sort(
+    (first, second) =>
+      (first.homepageFeature?.order ?? 0) -
+      (second.homepageFeature?.order ?? 0),
+  );
 
 const HERO_SLIDES = [
   {
@@ -98,6 +107,10 @@ export function HomePage() {
         </div>
       </section>
 
+      {homepageFeatures.map((service) => (
+        <ServiceFeature key={service.slug} service={service} />
+      ))}
+
       <section className="section section--bone" id="services">
         <div className="site-container">
           <ScrollReveal className="section-heading-row">
@@ -110,7 +123,7 @@ export function HomePage() {
               All services <ArrowUpRight aria-hidden="true" size={17} />
             </Link>
           </ScrollReveal>
-          <ServiceGrid services={services.slice(0, 9)} />
+          <ServiceGrid horizontal services={services} />
         </div>
       </section>
 
@@ -138,37 +151,6 @@ export function HomePage() {
             </Link>
           </div>
         </ScrollReveal>
-      </section>
-
-      <section className="section real-estate-feature">
-        <div className="site-container real-estate-feature__grid">
-          <ScrollReveal className="real-estate-feature__visual">
-            <img
-              alt="Residential building representing Rafi Real Estat Ltd.'s housing projects"
-              className="real-estate-feature__image"
-              src="/assets/rafi-real-estate-hero.jpg"
-            />
-            <span className="real-estate-feature__caption">
-              <Building2 aria-hidden="true" size={17} />
-              Rafi Real Estate
-            </span>
-          </ScrollReveal>
-          <ScrollReveal className="real-estate-feature__content" delay={100}>
-            <p className="eyebrow">Thoughtful residential development</p>
-            <h2>Safe housing is our commitment.</h2>
-            <p className="real-estate-feature__description">
-              Rafi Real Estat Ltd. develops residential buildings with quality materials and environmentally mindful concepts. Its engineering and planning teams work toward completing projects before the agreed apartment handover time.
-            </p>
-            <ul className="real-estate-feature__points">
-              <li><ShieldCheck aria-hidden="true" size={19} />Earthquake-conscious design</li>
-              <li><Leaf aria-hidden="true" size={19} />Environmentally mindful concepts</li>
-              <li><Building2 aria-hidden="true" size={19} />Quality materials and careful planning</li>
-            </ul>
-            <Link className="text-link" to="/services/rafi-real-estate">
-              Explore Rafi Real Estate <ArrowUpRight aria-hidden="true" size={17} />
-            </Link>
-          </ScrollReveal>
-        </div>
       </section>
 
       <section className="section section--bone quality-preview">
