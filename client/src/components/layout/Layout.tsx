@@ -1,5 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { BackToTop } from "../common/BackToTop";
 import { InitialVisitIntro } from "../common/InitialVisitIntro";
 import { SiteFooter } from "./SiteFooter";
 import { SiteHeader } from "./SiteHeader";
@@ -22,6 +23,7 @@ export function Layout() {
         </div>
       </main>
       <SiteFooter />
+      <BackToTop />
     </>
   );
 }

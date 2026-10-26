@@ -27,11 +27,12 @@ export function ServiceCard({
   return (
     <Link
       className={`service-card ${className}`.trim()}
+      draggable={false}
       style={cardStyle}
       to={`/services/${service.slug}`}
     >
       <span aria-hidden="true" className="service-card__backdrop">
-        <img alt="" decoding="async" loading="lazy" src={service.heroImage} />
+        <img alt="" decoding="async" draggable={false} loading="lazy" src={service.heroImage} />
       </span>
       <div className="service-card__top">
         <span className="service-card__icon">

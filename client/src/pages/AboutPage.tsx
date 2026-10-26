@@ -10,6 +10,7 @@ import { ContactCta } from "../components/common/ContactCta";
 import { PageIntro } from "../components/common/PageIntro";
 import { ScrollReveal } from "../components/common/ScrollReveal";
 import { Seo } from "../components/common/Seo";
+import { ManagingDirectorSection } from "../components/sections/ManagingDirectorSection";
 import { TestimonialsSection } from "../components/sections/TestimonialsSection";
 import { ServiceCard } from "../components/services/ServiceCard";
 import { company } from "../data/company";
@@ -87,29 +88,7 @@ export function AboutPage() {
         </ScrollReveal>
       </section>
 
-      <section className="section about-values">
-        <div className="site-container">
-          <ScrollReveal>
-            <div className="section-heading">
-              <p className="eyebrow">What guides the work</p>
-              <h2>Principles stated in the company materials.</h2>
-            </div>
-          </ScrollReveal>
-          <ScrollReveal className="about-values__grid" stagger>
-            {values.map(({ icon: Icon, title, text }, index) => (
-              <article
-                className="about-value gh-reveal-item"
-                key={title}
-                style={{ "--stagger-delay": `${index * 70}ms` } as React.CSSProperties}
-              >
-                <span className="about-value__icon"><Icon aria-hidden="true" size={22} /></span>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
-            ))}
-          </ScrollReveal>
-        </div>
-      </section>
+      <ManagingDirectorSection />
 
       <section className="section section--bone about-portfolio">
         <div className="site-container">
@@ -157,7 +136,29 @@ export function AboutPage() {
           </p>
         </div>
       </section>
-
+      <section className="section about-values">
+        <div className="site-container">
+          <ScrollReveal>
+            <div className="section-heading">
+              <p className="eyebrow">What guides the work</p>
+              <h2>Principles stated in the company materials.</h2>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal className="about-values__grid" stagger>
+            {values.map(({ icon: Icon, title, text }, index) => (
+              <article
+                className="about-value gh-reveal-item"
+                key={title}
+                style={{ "--stagger-delay": `${index * 70}ms` } as React.CSSProperties}
+              >
+                <span className="about-value__icon"><Icon aria-hidden="true" size={22} /></span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </ScrollReveal>
+        </div>
+      </section>
       <section className="section about-security-note">
         <ScrollReveal className="site-container about-security-note__inner">
           <div>

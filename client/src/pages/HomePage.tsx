@@ -6,6 +6,7 @@ import { SectionHeading } from "../components/common/SectionHeading";
 import { Seo } from "../components/common/Seo";
 import { ParallaxBackground } from "../components/common/ParallaxBackground";
 import { ScrollReveal } from "../components/common/ScrollReveal";
+import { ManagingDirectorSection } from "../components/sections/ManagingDirectorSection";
 import { ServiceFeature } from "../components/sections/ServiceFeature";
 import { TestimonialsSection } from "../components/sections/TestimonialsSection";
 import { ServiceGrid } from "../components/services/ServiceGrid";
@@ -110,6 +111,8 @@ export function HomePage() {
       {homepageFeatures.map((service) => (
         <ServiceFeature key={service.slug} service={service} />
       ))}
+
+      <ManagingDirectorSection />
 
       <section className="section section--bone" id="services">
         <div className="site-container">
