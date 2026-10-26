@@ -18,8 +18,8 @@ const practices = [
   },
   {
     icon: ClipboardCheck,
-    title: "Site planning and checks",
-    text: "Site evaluations, risk assessment, project coordination, quality checks, and quality-control sheets support service planning.",
+    title: "Site planning and safety",
+    text: "Risk assessments are carried out before work begins. Job sites are evaluated at least weekly, with more frequent checks for larger or more complex projects; quality-control sheets support communication between clients, staff, and supervisors.",
   },
   {
     icon: CheckCircle2,
@@ -36,7 +36,7 @@ export function QualitySafetyPage() {
         description="Learn about the screening, training, site evaluation, supervision, and quality practices described by Green Heaven Service."
       />
       <PageIntro
-        description="The company describes practical measures around staff preparation, site needs, and service checks."
+        description="The company describes practical measures around staff preparation, site needs, safety, and service checks."
         eyebrow="Our approach"
         image="/assets/security-hero.jpg"
         title="Quality & safety, considered from the start."

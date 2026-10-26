@@ -45,7 +45,7 @@ export function ServiceDetailPage() {
         </div>
       </section>
 
-      {isAdditional ? (
+      {isAdditional && !service.detailsConfirmed ? (
         <section className="section section--bone">
           <ScrollReveal className="site-container additional-note">
             <ClipboardCheck aria-hidden="true" size={27} />
