@@ -3,7 +3,7 @@ export const company = {
   established: "May 2019",
   slogan: "Security is Stronger than the Threat",
   philosophy: "Quality service at minimum cost",
-  managingDirector: "MD. Rabul Karim",
+  managingDirector: "Md. Rabiul Karim",
   director: "Sabina Yesmin",
   address:
     "House- 2/1, Block-A, Lalmatia, Mohammadpur, Dhaka-1209, Bangladesh",
