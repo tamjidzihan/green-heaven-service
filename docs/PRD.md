@@ -28,13 +28,13 @@ Use the following supplied information consistently:
 
 -   **Company name:** Green Heaven Service
 -   **Established:** May 2019
--   **Managing Director:** MD. Rabul Karim
+-   **Managing Director:** Md. Rabiul Karim
 -   **Director:** Sabina Yesmin
 -   **Address:** House- 2/1, Block-A, Lalmatia, Mohammadpur, Dhaka-1209, Bangladesh
 -   **Hotline:** 09697228400
 -   **T&T:** +8802223314766
 -   **Mobile:** +88 01711348400
--   **Email:** greenheavenservice@gmail.com
+-   **Email:** info@greenheavenserviceltd.com
 -   **Trade license:** TRAD/DNCC/020668/2023
 -   **Slogan:** Security is Stronger than the Threat
 -   **Service philosophy:** Quality service at minimum cost

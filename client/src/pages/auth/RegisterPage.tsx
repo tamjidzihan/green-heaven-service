@@ -162,7 +162,7 @@ export function RegisterPage() {
               setFormData((prev) => ({ ...prev, fullName: e.target.value }));
               if (fieldErrors.fullName) clearFieldError("fullName");
             }}
-            placeholder="MD. Rabul Karim"
+            placeholder="Md. Rabiul Karim"
             required
             type="text"
             value={formData.fullName}

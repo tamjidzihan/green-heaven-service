@@ -19,7 +19,6 @@ export function LoginPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showForgotModal, setShowForgotModal] = useState(false);
   const [forgotEmail, setForgotEmail] = useState("");
-  const [forgotSent, setForgotSent] = useState(false);
 
   // Email format validation helper
   const isValidEmail = (email: string) => {
@@ -135,7 +134,6 @@ export function LoginPage() {
                 className="auth-link-text auth-link-text--sm"
                 onClick={() => {
                   setForgotEmail(formData.email);
-                  setForgotSent(false);
                   setShowForgotModal(true);
                 }}
                 type="button"
@@ -232,68 +230,49 @@ export function LoginPage() {
             </div>
 
             <div className="auth-modal__body">
-              {forgotSent ? (
-                <div className="auth-modal__success">
-                  <p className="auth-modal__message">
-                    If an account is associated with <strong>{forgotEmail}</strong>, password reset instructions and security verification steps have been dispatched.
-                  </p>
-                  <p className="auth-modal__submessage">
-                    For corporate accounts, your assigned system administrator can also reset your credentials directly.
-                  </p>
-                  <button
-                    className="button button--frost auth-modal__action-btn"
-                    onClick={() => setShowForgotModal(false)}
-                    type="button"
-                  >
-                    Done
-                  </button>
-                </div>
-              ) : (
-                <>
-                  <p className="auth-modal__message">
-                    Enter your registered email address to receive password recovery instructions.
-                  </p>
-                  <div className="auth-modal__input-group">
-                    <label className="auth-field-label" htmlFor="recovery-email">
-                      Registered Email
-                    </label>
-                    <input
-                      className="auth-input"
-                      id="recovery-email"
-                      onChange={(e) => setForgotEmail(e.target.value)}
-                      placeholder="name@company.com"
-                      type="email"
-                      value={forgotEmail}
-                    />
-                  </div>
+              <p className="auth-modal__message">
+                Password reset is not set up on this website yet. You can email
+                support to request assistance; this opens a draft and does not
+                send a message until you choose to send it.
+              </p>
+              <div className="auth-modal__input-group">
+                <label className="auth-field-label" htmlFor="recovery-email">
+                  Registered Email
+                </label>
+                <input
+                  className="auth-input"
+                  id="recovery-email"
+                  onChange={(e) => setForgotEmail(e.target.value)}
+                  placeholder="name@company.com"
+                  type="email"
+                  value={forgotEmail}
+                />
+              </div>
 
-                  <div className="auth-modal__support-note">
-                    <Phone aria-hidden="true" size={14} />
-                    <span>
-                      Urgent assistance: Call hotline{" "}
-                      <a href={`tel:${company.hotline}`}>{company.hotline}</a>
-                    </span>
-                  </div>
+              <div className="auth-modal__support-note">
+                <Phone aria-hidden="true" size={14} />
+                <span>
+                  Urgent assistance: Call hotline{" "}
+                  <a href={`tel:${company.hotline}`}>{company.hotline}</a>
+                </span>
+              </div>
 
-                  <div className="auth-modal__actions">
-                    <button
-                      className="button button--glass"
-                      onClick={() => setShowForgotModal(false)}
-                      type="button"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      className="button button--frost"
-                      disabled={!forgotEmail.trim()}
-                      onClick={() => setForgotSent(true)}
-                      type="button"
-                    >
-                      Send Instructions
-                    </button>
-                  </div>
-                </>
-              )}
+              <div className="auth-modal__actions">
+                <button
+                  className="button button--glass"
+                  onClick={() => setShowForgotModal(false)}
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <a
+                  className="button button--frost"
+                  href={`mailto:${company.email}?subject=${encodeURIComponent("Password recovery assistance")}&body=${encodeURIComponent(`Please help me recover access to my account. Registered email: ${forgotEmail || "not provided"}`)}`}
+                >
+                  <Mail aria-hidden="true" size={16} />
+                  Email support
+                </a>
+              </div>
             </div>
           </div>
         </div>

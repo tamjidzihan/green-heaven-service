@@ -17,7 +17,7 @@
  *      "user": {
  *        "id": "usr_...",
  *        "email": "user@example.com",
- *        "fullName": "MD. Rabul Karim",
+ *        "fullName": "Md. Rabiul Karim",
  *        "phone": "+8801711348400"
  *      },
  *      "token": "<jwt-or-session-token>"
@@ -30,7 +30,7 @@
  * 2. POST /api/auth/register
  *    Request Body (JSON):
  *    {
- *      "fullName": "MD. Rabul Karim",
+ *      "fullName": "Md. Rabiul Karim",
  *      "email": "user@example.com",
  *      "phone": "+8801711348400", // optional
  *      "password": "Password123!",
@@ -42,7 +42,7 @@
  *      "user": {
  *        "id": "usr_...",
  *        "email": "user@example.com",
- *        "fullName": "MD. Rabul Karim",
+ *        "fullName": "Md. Rabiul Karim",
  *        "phone": "+8801711348400"
  *      },
  *      "message": "Account created successfully. Please verify your email if required.",

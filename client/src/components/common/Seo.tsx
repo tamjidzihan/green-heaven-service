@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+const SITE_URL = "https://greenheavenserviceltd.com";
+
 type SeoProps = {
   title: string;
   description: string;
@@ -30,9 +32,35 @@ export function Seo({ title, description }: SeoProps) {
       tag.content = content;
     };
 
+    const canonicalPath =
+      window.location.pathname === "/"
+        ? "/"
+        : window.location.pathname.replace(/\/+$/, "");
+    const canonicalUrl = `${SITE_URL}${canonicalPath}`;
+    let canonicalTag = document.querySelector<HTMLLinkElement>(
+      'link[rel="canonical"]',
+    );
+    if (!canonicalTag) {
+      canonicalTag = document.createElement("link");
+      canonicalTag.rel = "canonical";
+      document.head.append(canonicalTag);
+    }
+    canonicalTag.href = canonicalUrl;
+
     setPropertyMeta("og:title", title);
     setPropertyMeta("og:description", description);
     setPropertyMeta("og:type", "website");
+    setPropertyMeta("og:url", canonicalUrl);
+
+    let twitterCard = document.querySelector<HTMLMetaElement>(
+      'meta[name="twitter:card"]',
+    );
+    if (!twitterCard) {
+      twitterCard = document.createElement("meta");
+      twitterCard.name = "twitter:card";
+      document.head.append(twitterCard);
+    }
+    twitterCard.content = "summary";
   }, [description, title]);
 
   return null;

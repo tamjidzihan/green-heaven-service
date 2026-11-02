@@ -19,13 +19,13 @@ assistants. Update it when an approved decision changes.
 ## 2. Confirmed Company Details
 
 -   Company: Green Heaven Service
--   Managing Director: MD. Rabul Karim
+-   Managing Director: Md. Rabiul Karim
 -   Director: Sabina Yesmin
 -   Address: House- 2/1, Block-A, Lalmatia, Mohammadpur, Dhaka-1209, Bangladesh
 -   Hotline: 09697228400
 -   T&T: +8802223314766
 -   Mobile: +88 01711348400
--   Email: greenheavenservice@gmail.com
+-   Email: info@greenheavenserviceltd.com
 -   Trade license: TRAD/DNCC/020668/2023
 
 Use these details exactly unless the client provides updated
@@ -125,12 +125,13 @@ clearly identified integration point or an intentional mailto fallback.
 ## 10. Current Assumptions and Open Questions
 
 -   Official logo and approved brand colors are not confirmed.
--   Website deployment URL is not confirmed.
+-   Website: https://greenheavenserviceltd.com/
+-   Hosting: Netlify
 -   No backend/form provider has been specified.
 -   Bangla localization decision is pending.
 -   Additional service details require client validation.
--   Approved photos, testimonials, and client references have not been
-    supplied.
+-   Testimonial approval is unconfirmed; do not present displayed quotes as
+    verified until the client confirms them.
 
 ## 11. Update Policy
 

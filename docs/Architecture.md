@@ -123,7 +123,7 @@ export const company = {
   name: "Green Heaven Service",
   established: "May 2019",
   slogan: "Security is Stronger than the Threat",
-  managingDirector: "MD. Rabul Karim",
+  managingDirector: "Md. Rabiul Karim",
   director: "Sabina Yesmin",
   address:
     "House- 2/1, Block-A, Lalmatia, Mohammadpur, Dhaka-1209, Bangladesh",
@@ -198,8 +198,8 @@ third-party provider, document its setup and privacy implications.
 -   Use unique title and description per route.
 -   Use semantic headings and descriptive links.
 -   Add Open Graph metadata.
--   Add canonical URLs, sitemap, and robots configuration once the
-    production domain is known.
+-   Canonical URLs, sitemap, and robots configuration use the confirmed
+    Netlify deployment URL.
 -   Use structured data only for facts the company has confirmed and
     that accurately match the chosen schema.
 -   Avoid review/rating schema without genuine verifiable reviews.
@@ -229,9 +229,8 @@ the project scope warrants it.
 
 ## 12. Deployment Considerations
 
-Deployment platform and domain are not yet confirmed. Before launch: -
-Configure the host to serve the SPA fallback for direct route visits. -
-Set the production site URL for metadata and sitemap generation. -
-Configure any form endpoint and required environment variables. - Verify
-HTTPS, caching, and asset paths. - Test every route by opening it
-directly, not only through in-app navigation.
+The deployment uses Netlify at
+`https://greenheavenserviceltd.com/`. Before launch: configure any
+form endpoint and required environment variables; verify HTTPS, caching,
+and asset paths; and test every route by opening it directly, not only
+through in-app navigation.

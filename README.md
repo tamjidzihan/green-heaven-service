@@ -24,15 +24,17 @@ The frontend app uses Node.js and npm inside `client/`. The Vite development ser
 - `/` — Home
 - `/about` — About Green Heaven Service
 - `/services` — Service directory
-- `/services/security-services`
-- `/services/cleaning-housekeeping`
-- `/services/pest-control`
-- `/services/manpower-outsourcing`
-- `/services/gardening-landscaping`
-- `/services/event-management`
-- `/services/contracting-supply`
-- `/services/trading-import-export`
-- `/services/dairy-farm`
+- `/services/rafi-real-estate`
+- `/services/green-heaven-security-service`
+- `/services/green-heaven-pest-control-service`
+- `/services/green-heaven-cleaning-service`
+- `/services/green-heaven-events-management-service`
+- `/services/rs-trading-corporation`
+- `/services/green-heaven-dairy-farm-1`
+- `/services/green-heaven-land-keeping`
+- `/services/green-heaven-outsourcing`
+- `/services/green-heaven-export-import`
+- `/services/first-class-contractor`
 - `/quality-safety` — Quality and safety practices
 - `/contact` — Contact details and email-draft enquiry
 - `/privacy-policy` — Website privacy information
@@ -41,7 +43,7 @@ Configure the production host to serve the SPA entry point for these direct rout
 
 ## Content, assets, and integrations
 
-Company and service details are centralized in `client/src/data/`. Security, cleaning, and pest-control details are based on the supplied company profile; Rafi Real Estate details are based on its supplied text profile. Other listed activities are described conservatively where the reference materials do not document their scope. The homepage features security, cleaning, and pest control as the three services described in detail in the company profile.
+Company and service details are centralized in `client/src/data/`. Security, cleaning, and pest-control details are based on the supplied company profile; Rafi Real Estate details are based on its supplied text profile. Other listed activities are described conservatively where the reference materials do not document their scope. The homepage features Rafi Real Estate, security, and pest control.
 
 Hero backgrounds use locally stored Unsplash photographs with a subtle scroll-linked parallax effect. The motion is disabled when reduced motion is requested. Assets are decorative stock imagery—not depictions of Green Heaven Service staff, customers, or projects—and are subject to the [Unsplash License](https://unsplash.com/license):
 

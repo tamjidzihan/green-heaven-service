@@ -97,8 +97,7 @@ implementation and verification.
 
 -   [x] Add unique page titles and meta descriptions.
 -   [x] Add Open Graph metadata.
--   [ ] Add sitemap and robots configuration when the deployment URL is
-    confirmed.
+-   [x] Add sitemap and robots configuration for the confirmed deployment URL.
 -   [x] Check heading hierarchy and semantic landmarks.
 -   [x] Check keyboard navigation and visible focus.
 -   [ ] Check contrast and form error accessibility.
@@ -125,8 +124,8 @@ implementation and verification.
 
 -   [ ] Confirm official logo and approved brand assets.
 -   [ ] Confirm scope for the six additional business activities.
--   [ ] Confirm form destination and receiving address.
--   [ ] Confirm production domain and hosting.
+-   [x] Confirm form destination and receiving address.
+-   [x] Confirm production domain and hosting.
 -   [ ] Confirm whether Bangla localization is required.
 -   [ ] Obtain approval for any project photographs, client logos,
     testimonials, or certifications before publishing.
