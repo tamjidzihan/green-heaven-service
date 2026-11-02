@@ -13,7 +13,7 @@ export function ManagingDirectorSection() {
             alt={`${company.managingDirector}, Managing Director of Green Heaven Service`}
             decoding="async"
             loading="lazy"
-            src="/assets/md_rabiul_karim.jpg"
+            src={company.manegingDirectorPhoto}
           />
           <div className="managing-director__caption">
             <span>{company.managingDirector}</span>
