@@ -12,9 +12,10 @@ import { ScrollReveal } from "../components/common/ScrollReveal";
 import { Seo } from "../components/common/Seo";
 import { ManagingDirectorSection } from "../components/sections/ManagingDirectorSection";
 import { TestimonialsSection } from "../components/sections/TestimonialsSection";
-import { ServiceCard } from "../components/services/ServiceCard";
 import { company } from "../data/company";
 import { services } from "../data/services";
+import { SectionHeading } from "@/components/common/SectionHeading";
+import { ServiceGrid } from "@/components/services/ServiceGrid";
 
 const values = [
   {
@@ -35,11 +36,6 @@ const values = [
 ];
 
 export function AboutPage() {
-  const coreServices = services.filter((service) => service.category === "primary");
-  const otherActivities = services.filter(
-    (service) => service.category === "additional",
-  );
-
   return (
     <>
       <Seo
@@ -90,7 +86,7 @@ export function AboutPage() {
 
       <ManagingDirectorSection />
 
-      <section className="section section--bone about-portfolio">
+      {/* <section className="section section--bone about-portfolio">
         <div className="site-container">
           <ScrollReveal>
             <div className="section-heading">
@@ -135,7 +131,24 @@ export function AboutPage() {
             information.
           </p>
         </div>
+      </section> */}
+
+      <section className="section section--bone" id="services">
+        <div className="site-container">
+          <ScrollReveal className="section-heading-row">
+            <SectionHeading
+              description="From security and facility care to other listed business activities, explore the services offered by Green Heaven Service."
+              eyebrow="What we do"
+              title="Support for the places that matter."
+            />
+            <Link className="text-link" to="/services">
+              All services <ArrowUpRight aria-hidden="true" size={17} />
+            </Link>
+          </ScrollReveal>
+          <ServiceGrid horizontal services={services} />
+        </div>
       </section>
+
       <section className="section about-values">
         <div className="site-container">
           <ScrollReveal>
