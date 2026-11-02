@@ -1,9 +1,11 @@
 export const company = {
   name: "Green Heaven Service",
   established: "May 2019",
+  photo: "/assets/green_heaven_service_logo.png",
   slogan: "Security is Stronger than the Threat",
   philosophy: "Quality service at minimum cost",
   managingDirector: "Md. Rabiul Karim",
+  manegingDirectorPhoto: "/assets/md_rabiul_karim.png",
   director: "Sabina Yesmin",
   address:
     "House- 2/1, Block-A, Lalmatia, Mohammadpur, Dhaka-1209, Bangladesh",
