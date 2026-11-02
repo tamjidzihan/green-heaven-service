@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowDown, ArrowRight, ArrowUpRight, ShieldCheck } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ContactCta } from "../components/common/ContactCta";
 import { SectionHeading } from "../components/common/SectionHeading";
@@ -7,19 +7,12 @@ import { Seo } from "../components/common/Seo";
 import { ParallaxBackground } from "../components/common/ParallaxBackground";
 import { ScrollReveal } from "../components/common/ScrollReveal";
 import { ManagingDirectorSection } from "../components/sections/ManagingDirectorSection";
-import { ServiceFeature } from "../components/sections/ServiceFeature";
 import { TestimonialsSection } from "../components/sections/TestimonialsSection";
-import { ServiceGrid } from "../components/services/ServiceGrid";
 import { company } from "../data/company";
 import { services } from "../data/services";
+import { ServiceCard } from "@/components/services/ServiceCard";
 
-const homepageFeatures = services
-  .filter((service) => service.homepageFeature)
-  .sort(
-    (first, second) =>
-      (first.homepageFeature?.order ?? 0) -
-      (second.homepageFeature?.order ?? 0),
-  );
+
 
 const HERO_SLIDES = [
   {
@@ -47,6 +40,10 @@ const HERO_SLIDES = [
 export function HomePage() {
   const [activeHeroIndex, setActiveHeroIndex] = useState(0);
   const heroImageSources = HERO_SLIDES.map((slide) => slide.src);
+  const coreServices = services.filter((service) => service.category === "primary");
+  const otherActivities = services.filter(
+    (service) => service.category === "additional",
+  );
 
   return (
     <>
@@ -112,55 +109,45 @@ export function HomePage() {
           </div>
         </div>
       </section>
-
-      {homepageFeatures.map((service) => (
-        <ServiceFeature key={service.slug} service={service} />
-      ))}
-
-      <ManagingDirectorSection />
-
       <section className="section section--bone" id="services">
-        <div className="site-container">
+        <div className="site-container ">
           <ScrollReveal className="section-heading-row">
             <SectionHeading
-              description="From security and facility care to other listed business activities, explore the services offered by Green Heaven Service."
-              eyebrow="What we do"
-              title="Support for the places that matter."
+              description="Explore security, cleaning, pest control, and Rafi Real Estate. The remaining business concerns are listed with clear notes where their scope needs confirmation."
+              eyebrow="Service catalogue"
+              title="All services & business divisions."
             />
             <Link className="text-link" to="/services">
               All services <ArrowUpRight aria-hidden="true" size={17} />
             </Link>
           </ScrollReveal>
-          <ServiceGrid horizontal services={services} />
+
+          <p className="about-portfolio__label">Core services</p>
+          <div className="service-grid about-portfolio__core">
+            {coreServices.map((service, index) => (
+              <ServiceCard
+                key={service.slug}
+                service={service}
+                staggerIndex={index}
+              />
+            ))}
+          </div>
+
+          <p className="about-portfolio__label about-portfolio__label--additional">
+            Other listed business concerns
+          </p>
+          <div className="service-grid about-portfolio__other">
+            {otherActivities.map((service, index) => (
+              <ServiceCard
+                key={service.slug}
+                service={service}
+                staggerIndex={index}
+              />
+            ))}
+          </div>
         </div>
       </section>
-
-      <section className="section company-band">
-        <ScrollReveal className="site-container company-band__grid" stagger>
-          <div className="company-band__identity gh-reveal-item">
-            <p className="eyebrow">Green Heaven Service</p>
-            <h2>Quality service at minimum cost.</h2>
-            <p>
-              Established in {company.established}, Green Heaven Service brings together security, cleaning and housekeeping, pest control, and other listed business activities.
-            </p>
-            <Link className="text-link text-link--light" to="/about">
-              About the company <ArrowUpRight aria-hidden="true" size={17} />
-            </Link>
-          </div>
-          <div className="company-band__detail gh-reveal-item">
-            <div className="company-band__icon"><ShieldCheck aria-hidden="true" size={25} /></div>
-            <p className="eyebrow">A considered approach</p>
-            <h3>People, planning, and checks.</h3>
-            <p>
-              Supported practices include staff screening and training, work schedules, site evaluations, project coordination, and quality checks where relevant.
-            </p>
-            <Link to="/quality-safety">
-              Explore quality & safety <ArrowRight aria-hidden="true" size={15} />
-            </Link>
-          </div>
-        </ScrollReveal>
-      </section>
-
+      <ManagingDirectorSection />
       <section className="section section--bone quality-preview">
         <ScrollReveal className="site-container quality-preview__inner">
           <div>
