@@ -1,6 +1,7 @@
 import { PageIntro } from "../components/common/PageIntro";
 import { ScrollReveal } from "../components/common/ScrollReveal";
 import { Seo } from "../components/common/Seo";
+import { company } from "../data/company";
 
 export function PrivacyPolicyPage() {
   return (
@@ -31,7 +32,7 @@ export function PrivacyPolicyPage() {
           <h2>Questions</h2>
           <p>
             For questions about this notice or information you have shared, contact{" "}
-            <a href="mailto:greenheavenservice@gmail.com">greenheavenservice@gmail.com</a>.
+            <a href={`mailto:${company.email}`}>{company.email}</a>.
           </p>
         </ScrollReveal>
       </section>
