@@ -70,7 +70,7 @@ export function AuthDotWave({ mouseX, mouseY, mouseActive }: AuthDotWaveProps) {
       if (isHovering && curX >= 0 && curY >= 0) {
         const aura = ctx.createRadialGradient(curX, curY, 0, curX, curY, hoverRadius);
         aura.addColorStop(0, "rgba(0, 138, 60, 0.14)");
-        aura.addColorStop(0.45, "rgba(36, 74, 58, 0.07)");
+        aura.addColorStop(0.45, "rgba(18, 53, 34, 0.1)");
         aura.addColorStop(1, "rgba(4, 6, 10, 0)");
         ctx.fillStyle = aura;
         ctx.fillRect(0, 0, width, height);
