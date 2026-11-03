@@ -69,7 +69,7 @@ export function AuthDotWave({ mouseX, mouseY, mouseActive }: AuthDotWaveProps) {
       // 1. Soft atmospheric cursor glow on the canvas
       if (isHovering && curX >= 0 && curY >= 0) {
         const aura = ctx.createRadialGradient(curX, curY, 0, curX, curY, hoverRadius);
-        aura.addColorStop(0, "rgba(143, 180, 217, 0.14)");
+        aura.addColorStop(0, "rgba(0, 138, 60, 0.14)");
         aura.addColorStop(0.45, "rgba(36, 74, 58, 0.07)");
         aura.addColorStop(1, "rgba(4, 6, 10, 0)");
         ctx.fillStyle = aura;
@@ -112,17 +112,17 @@ export function AuthDotWave({ mouseX, mouseY, mouseActive }: AuthDotWaveProps) {
 
           // Dot color & lighting
           if (hoverIntensity > 0.05) {
-            // Illuminated by cursor: Frost blue glow
+            // Illuminated by cursor: brand green glow
             const alpha = Math.min(0.95, 0.12 + hoverIntensity * 0.85);
-            ctx.fillStyle = `rgba(143, 180, 217, ${alpha})`;
+            ctx.fillStyle = `rgba(0, 138, 60, ${alpha})`;
 
             // Soft bloom halo for dots directly under cursor
             if (hoverIntensity > 0.45) {
               ctx.beginPath();
               ctx.arc(dotX, dotY, radius * 2.2, 0, Math.PI * 2);
-              ctx.fillStyle = `rgba(143, 180, 217, ${hoverIntensity * 0.18})`;
+              ctx.fillStyle = `rgba(0, 138, 60, ${hoverIntensity * 0.18})`;
               ctx.fill();
-              ctx.fillStyle = `rgba(185, 215, 239, ${alpha})`;
+              ctx.fillStyle = `rgba(53, 164, 85, ${alpha})`;
             }
           } else {
             // Ambient wave dot: Muted translucent ink/frost

@@ -86,7 +86,7 @@ export function InitialVisitIntro() {
             {/* Smaller, tabular numerals so the width doesn't jitter */}
             <span className="font-mono text-lg font-semibold tracking-tight text-[#f5f7fa] tabular-nums sm:text-2xl">
               {progress}
-              <span className="ml-0.5 text-sm text-[#8fb4d9]">%</span>
+              <span className="ml-0.5 text-sm text-[#008a3c]">%</span>
             </span>
             <span className="mt-1.5 text-[9px] font-semibold uppercase tracking-[0.28em] text-[#008a3c]/90">
               Green Heaven Service
@@ -95,9 +95,9 @@ export function InitialVisitIntro() {
         </RippleCircles>
 
         {/* Thin progress bar adds a second, quieter read of progress */}
-        <div className="mt-7 h-px w-40 overflow-hidden rounded-full bg-[#8fb4d9]/15">
+        <div className="mt-7 h-px w-40 overflow-hidden rounded-full bg-[#008a3c]/15">
           <div
-            className="h-full bg-gradient-to-r from-[#8fb4d9]/40 to-[#8fb4d9] transition-[width] duration-100 ease-linear"
+            className="h-full bg-gradient-to-r from-[#008a3c]/40 to-[#008a3c] transition-[width] duration-100 ease-linear"
             style={{ width: `${progress}%` }}
           />
         </div>
@@ -109,7 +109,7 @@ export function InitialVisitIntro() {
         <button
           type="button"
           onClick={handleSkip}
-          className="mt-6 text-[10px] uppercase tracking-[0.2em] text-[#8fb4d9]/60 transition-colors hover:text-[#8fb4d9] focus-visible:outline-none focus-visible:underline"
+          className="mt-6 text-[10px] uppercase tracking-[0.2em] text-[#008a3c]/60 transition-colors hover:text-[#008a3c] focus-visible:outline-none focus-visible:underline"
         >
           Skip intro
         </button>
