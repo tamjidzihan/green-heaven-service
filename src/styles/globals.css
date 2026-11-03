@@ -4,15 +4,16 @@
   --font-sans: "Geist Variable", "Helvetica Neue", Arial, sans-serif;
   --color-ground: #04060a;
   --color-ink: #f5f7fa;
-  --color-frost: #8fb4d9;
+  --color-frost: #62c47e;
   --color-bone: #f7f5ef;
-  --color-slate: #18232d;
-  --color-forest: #244a3a;
+  --color-slate: #183728;
+  --color-forest: #008a3c;
+  --color-brand: #008a3c;
 }
 
 :root {
   font-family: "Geist Variable", "Helvetica Neue", Arial, sans-serif;
-  color: #18232d;
+  color: #183728;
   background: #f7f5ef;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -21,10 +22,12 @@
   --ground: #04060a;
   --ink: #f5f7fa;
   --ink-muted: #c3cad6;
-  --frost: #8fb4d9;
+  --frost: #62c47e;
   --bone: #f7f5ef;
-  --slate: #18232d;
-  --forest: #244a3a;
+  --slate: #183728;
+  --forest: #008a3c;
+  --brand: #008a3c;
+  --brand-dark: #006b2e;
   --muted: #56616b;
   --border: #d9dee1;
   --container: 2080px;
@@ -45,8 +48,8 @@
   --shadow-card: 0 2px 8px rgba(4, 6, 10, 0.03), 0 1px 2px rgba(4, 6, 10, 0.02);
   --shadow-card-hover: 0 16px 36px -4px rgba(4, 6, 10, 0.08), 0 4px 12px -2px rgba(4, 6, 10, 0.03);
   --shadow-glass: 0 16px 40px -8px rgba(4, 6, 10, 0.35);
-  --shadow-glow-frost: 0 0 24px rgba(143, 180, 217, 0.2);
-  --shadow-glow-forest: 0 0 32px rgba(36, 74, 58, 0.25);
+  --shadow-glow-frost: 0 0 24px rgba(0, 138, 60, 0.2);
+  --shadow-glow-forest: 0 0 32px rgba(0, 138, 60, 0.25);
 }
 
 * {
@@ -167,7 +170,7 @@ svg {
 }
 
 .back-to-top:hover {
-  border-color: rgba(143, 180, 217, 0.72);
+  border-color: rgba(0, 138, 60, 0.72);
   background: #18232d;
   color: #fff;
 }
@@ -319,16 +322,16 @@ svg {
 }
 
 .button--frost {
-  border-color: rgba(143, 180, 217, 0.85);
-  background: linear-gradient(135deg, #a4c7e8 0%, #8fb4d9 100%);
-  color: #040d16;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), 0 4px 14px rgba(143, 180, 217, 0.22);
+  border-color: var(--brand);
+  background: linear-gradient(135deg, #007b35 0%, var(--brand-dark) 100%);
+  color: #fff;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22), 0 4px 14px rgba(0, 138, 60, 0.22);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .button--frost:hover {
-    border-color: #b9d7ef;
-    background: linear-gradient(135deg, #b9d7ef 0%, #9fc0e0 100%);
+    border-color: #35a455;
+    background: linear-gradient(135deg, #006b2e 0%, #005725 100%);
   }
 }
 
@@ -724,7 +727,7 @@ svg {
 .services-menu__links a:hover,
 .services-menu__links a[aria-current="page"] {
   color: #ffffff;
-  background: rgba(143, 180, 217, 0.12);
+  background: rgba(0, 138, 60, 0.12);
   transform: translateX(3px);
   text-decoration: none;
 }
@@ -790,7 +793,7 @@ svg {
 
 @media (hover: hover) and (pointer: fine) {
   .site-header--hero .header-quote:hover {
-    border-color: rgba(143, 180, 217, 0.7);
+    border-color: rgba(0, 138, 60, 0.7);
     background: rgba(4, 6, 10, 0.8);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
   }
@@ -1451,14 +1454,14 @@ svg {
 @media (hover: hover) and (pointer: fine) {
   .service-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(143, 180, 217, 0.8);
+    border-color: rgba(0, 138, 60, 0.8);
     box-shadow: 0 16px 36px -6px rgba(4, 6, 10, 0.24), 0 4px 12px rgba(4, 6, 10, 0.14);
     transition-delay: 0s;
   }
 
   .service-card:hover .service-card__arrow {
     transform: translate(3px, -3px);
-    color: #d6eafa;
+    color: #d5efdc;
   }
 
   .service-card:hover .service-card__backdrop img {
@@ -1469,14 +1472,14 @@ svg {
 
 .service-card:focus-visible {
   transform: translateY(-5px);
-  border-color: #8fb4d9;
-  box-shadow: 0 0 0 3px rgba(143, 180, 217, 0.35), 0 16px 36px -6px rgba(4, 6, 10, 0.22);
+  border-color: #008a3c;
+  box-shadow: 0 0 0 3px rgba(0, 138, 60, 0.35), 0 16px 36px -6px rgba(4, 6, 10, 0.22);
   transition-delay: 0s;
 }
 
 .service-card:focus-visible .service-card__arrow {
   transform: translate(3px, -3px);
-  color: #d6eafa;
+  color: #d5efdc;
 }
 
 .service-card__top {
@@ -1534,7 +1537,7 @@ svg {
   overflow: hidden;
   background:
     radial-gradient(ellipse 70% 60% at 20% 50%, rgba(36, 74, 58, 0.35) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 50% at 85% 60%, rgba(143, 180, 217, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 85% 60%, rgba(0, 138, 60, 0.08) 0%, transparent 60%),
     linear-gradient(180deg, #0e171e 0%, #18232d 100%);
   color: var(--ink);
   border-top: 1px solid rgba(245, 247, 250, 0.08);
@@ -1585,7 +1588,7 @@ svg {
 
 @media (hover: hover) and (pointer: fine) {
   .company-band__detail:hover {
-    border-color: rgba(143, 180, 217, 0.35);
+    border-color: rgba(0, 138, 60, 0.35);
     transform: translateY(-3px);
   }
 }
@@ -1596,11 +1599,11 @@ svg {
   height: 52px;
   margin-bottom: 26px;
   place-items: center;
-  border: 1px solid rgba(143, 180, 217, 0.4);
+  border: 1px solid rgba(0, 138, 60, 0.4);
   border-radius: 8px;
-  background: rgba(143, 180, 217, 0.1);
+  background: rgba(0, 138, 60, 0.1);
   color: var(--frost);
-  box-shadow: 0 0 20px rgba(143, 180, 217, 0.15);
+  box-shadow: 0 0 20px rgba(0, 138, 60, 0.15);
   transition: transform var(--dur-fast) var(--ease-out-expo),
     box-shadow var(--dur-fast) var(--ease-out-expo);
 }
@@ -1608,7 +1611,7 @@ svg {
 @media (hover: hover) and (pointer: fine) {
   .company-band__detail:hover .company-band__icon {
     transform: scale(1.06);
-    box-shadow: 0 0 28px rgba(143, 180, 217, 0.3);
+    box-shadow: 0 0 28px rgba(0, 138, 60, 0.3);
   }
 }
 
@@ -1779,7 +1782,7 @@ svg {
 
 .service-feature--2 {
   background:
-    radial-gradient(ellipse 50% 75% at 85% 50%, rgba(143, 180, 217, 0.09), transparent 70%),
+    radial-gradient(ellipse 50% 75% at 85% 50%, rgba(0, 138, 60, 0.09), transparent 70%),
     linear-gradient(155deg, #101a22, #18232d);
   color: var(--ink);
 }
@@ -1906,7 +1909,7 @@ svg {
 .service-guide-card__number {
   display: inline-block;
   margin-bottom: 22px;
-  color: #42667e;
+  color: #1c6b39;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.13em;
@@ -1962,7 +1965,7 @@ svg {
 .service-process__number {
   display: inline-block;
   margin-bottom: 24px;
-  color: #40647d;
+  color: #1c6b39;
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -2214,7 +2217,7 @@ svg {
 }
 
 .detail-hero .eyebrow {
-  color: #b7cbd9;
+  color: #b7d9c0;
 }
 
 .detail-hero h1 {
@@ -2236,9 +2239,9 @@ svg {
   place-items: center;
   border: 1px solid rgba(245, 247, 250, 0.16);
   border-radius: 50%;
-  background: radial-gradient(circle at center, rgba(143, 180, 217, 0.08) 0%, transparent 70%);
-  box-shadow: 0 0 50px rgba(143, 180, 217, 0.08);
-  color: rgba(143, 180, 217, 0.88);
+  background: radial-gradient(circle at center, rgba(0, 138, 60, 0.08) 0%, transparent 70%);
+  box-shadow: 0 0 50px rgba(0, 138, 60, 0.08);
+  color: rgba(0, 138, 60, 0.88);
   transition: transform var(--dur-med) var(--ease-out-expo),
     box-shadow var(--dur-med) var(--ease-out-expo);
 }
@@ -2246,7 +2249,7 @@ svg {
 @media (hover: hover) and (pointer: fine) {
   .detail-hero:hover .detail-hero__icon {
     transform: scale(1.03);
-    box-shadow: 0 0 60px rgba(143, 180, 217, 0.16);
+    box-shadow: 0 0 60px rgba(0, 138, 60, 0.16);
   }
 }
 
@@ -2371,7 +2374,7 @@ svg {
 }
 
 .additional-note>svg {
-  color: #42667e;
+  color: #1c6b39;
 }
 
 .additional-note .eyebrow {
@@ -2524,7 +2527,7 @@ svg {
 @media (hover: hover) and (pointer: fine) {
   .about-value:hover {
     transform: translateY(-3px);
-    border-color: rgba(143, 180, 217, 0.38);
+    border-color: rgba(0, 138, 60, 0.38);
     background: rgba(255, 255, 255, 0.06);
   }
 }
@@ -2535,9 +2538,9 @@ svg {
   height: 46px;
   margin-bottom: 24px;
   place-items: center;
-  border: 1px solid rgba(143, 180, 217, 0.38);
+  border: 1px solid rgba(0, 138, 60, 0.38);
   border-radius: 5px;
-  background: rgba(143, 180, 217, 0.1);
+  background: rgba(0, 138, 60, 0.1);
   color: #bad6eb;
 }
 
@@ -2654,7 +2657,7 @@ svg {
   }
 
   .practice-card:hover .practice-card__icon {
-    border-color: #8fb4d9;
+    border-color: #008a3c;
     background: #edf4fa;
     color: #1a425f;
     transform: translateY(-2px) scale(1.05);
@@ -2757,7 +2760,7 @@ svg {
 .quality-panel>svg,
 .quality-safety-card>svg,
 .quality-training__intro>svg {
-  color: #42667e;
+  color: #1c6b39;
 }
 
 .quality-panel h3,
@@ -2827,8 +2830,8 @@ svg {
 .training-day summary::after {
   width: 8px;
   height: 8px;
-  border-right: 1.5px solid #42667e;
-  border-bottom: 1.5px solid #42667e;
+  border-right: 1.5px solid #1c6b39;
+  border-bottom: 1.5px solid #1c6b39;
   content: "";
   transform: rotate(45deg);
   transition: transform var(--dur-fast) var(--ease-out-expo);
@@ -2984,8 +2987,8 @@ svg {
 }
 
 .testimonials-controls__button:hover {
-  border-color: rgba(143, 180, 217, 0.8);
-  background: rgba(143, 180, 217, 0.12);
+  border-color: rgba(0, 138, 60, 0.8);
+  background: rgba(0, 138, 60, 0.12);
   color: white;
 }
 
@@ -3023,7 +3026,7 @@ svg {
 
 .testimonial-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(143, 180, 217, 0.42);
+  border-color: rgba(0, 138, 60, 0.42);
   background: rgba(255, 255, 255, 0.075);
 }
 
@@ -3059,9 +3062,9 @@ svg {
   height: 40px;
   flex: 0 0 auto;
   place-items: center;
-  border: 1px solid rgba(143, 180, 217, 0.36);
+  border: 1px solid rgba(0, 138, 60, 0.36);
   border-radius: 50%;
-  background: rgba(143, 180, 217, 0.12);
+  background: rgba(0, 138, 60, 0.12);
   color: #d2e4f1;
   font-size: 12px;
   font-weight: 600;
@@ -3123,7 +3126,7 @@ svg {
 
 @media (hover: hover) and (pointer: fine) {
   .contact-detail:hover>span {
-    border-color: #8fb4d9;
+    border-color: #008a3c;
     background: #e1edf5;
     color: #173b53;
     transform: scale(1.05);
@@ -3207,7 +3210,7 @@ svg {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  color: #355a71;
+  color: #1c6b39;
 }
 
 .contact-form__heading .eyebrow {
@@ -3274,7 +3277,7 @@ svg {
 .contact-form input:hover,
 .contact-form select:hover,
 .contact-form textarea:hover {
-  border-color: #9cb5c5;
+  border-color: #94b79b;
 }
 
 .contact-form input:focus,
@@ -3282,8 +3285,8 @@ svg {
 .contact-form textarea:focus {
   outline: none;
   background: #ffffff;
-  border-color: #8fb4d9;
-  box-shadow: 0 0 0 3px rgba(143, 180, 217, 0.28);
+  border-color: #008a3c;
+  box-shadow: 0 0 0 3px rgba(0, 138, 60, 0.28);
 }
 
 .contact-form textarea {
@@ -3452,7 +3455,7 @@ svg {
 .footer-contact>p svg {
   flex: 0 0 auto;
   margin-top: 1px;
-  color: #8fb4d9;
+  color: #008a3c;
 }
 
 .footer-phone-tag {
@@ -3592,8 +3595,8 @@ svg {
     justify-content: center;
     gap: 10px;
     margin-top: 14px;
-    border: 1px solid rgba(143, 180, 217, 0.75);
-    background: rgba(143, 180, 217, 0.15);
+    border: 1px solid rgba(0, 138, 60, 0.75);
+    background: rgba(0, 138, 60, 0.15);
     color: #e6f1f8;
     font-weight: 600;
   }
@@ -4238,7 +4241,7 @@ svg {
 }
 
 .auth-header__back:hover {
-  border-color: rgba(143, 180, 217, 0.45);
+  border-color: rgba(0, 138, 60, 0.45);
   background: rgba(4, 6, 10, 0.75);
   color: var(--ink);
   transform: translateX(-2px);
@@ -4431,13 +4434,13 @@ svg {
 }
 
 .auth-input-wrapper:hover {
-  border-color: rgba(143, 180, 217, 0.35);
+  border-color: rgba(0, 138, 60, 0.35);
 }
 
 .auth-input-wrapper:focus-within {
   border-color: var(--frost);
   background: rgba(10, 16, 24, 0.95);
-  box-shadow: 0 0 0 3px rgba(143, 180, 217, 0.24);
+  box-shadow: 0 0 0 3px rgba(0, 138, 60, 0.24);
 }
 
 .auth-input-wrapper--error {
@@ -4610,7 +4613,7 @@ svg {
 }
 
 .auth-checkbox:hover {
-  border-color: rgba(143, 180, 217, 0.5);
+  border-color: rgba(0, 138, 60, 0.5);
 }
 
 .auth-checkbox:checked {
@@ -4651,7 +4654,7 @@ svg {
 }
 
 .auth-link-text:hover {
-  color: #b9d7ef;
+  color: #35a455;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -4664,7 +4667,7 @@ svg {
 }
 
 .auth-link-highlight:hover {
-  color: #b9d7ef;
+  color: #35a455;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -4806,7 +4809,7 @@ svg {
   width: 520px;
   height: 520px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(143, 180, 217, 0.1) 0%, transparent 65%);
+  background: radial-gradient(circle, rgba(0, 138, 60, 0.1) 0%, transparent 65%);
   filter: blur(50px);
   pointer-events: none;
 }
@@ -4841,7 +4844,7 @@ svg {
   margin-left: -270px;
   margin-top: -270px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(143, 180, 217, 0.22) 0%, rgba(36, 74, 58, 0.12) 35%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 138, 60, 0.22) 0%, rgba(36, 74, 58, 0.12) 35%, transparent 70%);
   filter: blur(32px);
   pointer-events: none;
   z-index: 2;
@@ -4926,8 +4929,8 @@ svg {
   display: grid;
   place-items: center;
   border-radius: 10px;
-  background: rgba(143, 180, 217, 0.12);
-  border: 1px solid rgba(143, 180, 217, 0.25);
+  background: rgba(0, 138, 60, 0.12);
+  border: 1px solid rgba(0, 138, 60, 0.25);
   color: var(--frost);
 }
 
@@ -4979,7 +4982,7 @@ svg {
   flex-direction: column;
   gap: 3px;
   padding-left: 14px;
-  border-left: 2px solid rgba(143, 180, 217, 0.4);
+  border-left: 2px solid rgba(0, 138, 60, 0.4);
 }
 
 .auth-brand-slogan-bar__quote {
@@ -5094,8 +5097,8 @@ svg {
   gap: 8px;
   padding: 10px 12px;
   border-radius: 8px;
-  background: rgba(143, 180, 217, 0.08);
-  border: 1px solid rgba(143, 180, 217, 0.16);
+  background: rgba(0, 138, 60, 0.08);
+  border: 1px solid rgba(0, 138, 60, 0.16);
   color: #a9c6e2;
   font-size: 12px;
 }
