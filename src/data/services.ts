@@ -37,6 +37,11 @@ type HomepageFeature = {
   highlights: ServiceHighlight[];
 };
 
+type ServiceGuide = {
+  title: string;
+  description: string;
+};
+
 export type Service = {
   slug: string;
   aliases?: string[];
@@ -48,6 +53,8 @@ export type Service = {
   category: "primary" | "additional";
   offerings: string[];
   approach: string[];
+  guides?: ServiceGuide[];
+  guidesDescription?: string;
   process?: string[];
   faqs?: ServiceFaq[];
   homepageFeature?: HomepageFeature;
@@ -141,6 +148,30 @@ export const services: Service[] = [
       "The profile describes recruitment through national media, screening that includes police verification, training by experienced ex-Defence personnel, and induction at the assigned post.",
       "For full security responsibilities, the profile describes providing personnel and a head-office control headquarters operating round the clock.",
     ],
+    guides: [
+      {
+        title: "Understand the site",
+        description:
+          "A survey or inspection looks for security gaps at places such as offices, factories, construction sites, and field installations. Findings can inform recommendations and planning.",
+      },
+      {
+        title: "Plan the right response",
+        description:
+          "Security planning can cover the personnel, procedures, training, or equipment needed for a particular organization or location.",
+      },
+      {
+        title: "Prepare and assign personnel",
+        description:
+          "The company profile describes recruitment, screening that includes police verification, training by experienced ex-Defence personnel, and induction at the assigned post.",
+      },
+      {
+        title: "Support specialist requirements",
+        description:
+          "Listed capabilities also include equipment installation, maintenance or rental, route reconnaissance and escort, fire-safety training, cash-in-transit security, and liaison support. Confirm the specific scope and availability for each requirement.",
+      },
+    ],
+    guidesDescription:
+      "Security support can begin with understanding a location and its risks, then agreeing on suitable planning, people, or specialist services.",
     process: [
       "Survey, inspect, or reconnoitre the specified site or route.",
       "Assess identified security gaps and discuss suitable measures.",
@@ -202,6 +233,30 @@ export const services: Service[] = [
       "For sensitive settings such as restaurants and hospitals, the profile describes using bait to avoid contact pesticides.",
       "Glue boards and traps are among the rodent-control methods described. Confirm the suitable method for a specific site with the company.",
     ],
+    guides: [
+      {
+        title: "Identify the pest",
+        description:
+          "Start by describing the pest, where it has been seen, and the affected area. The profile says identification helps determine whether there is a problem and which approach may fit.",
+      },
+      {
+        title: "Choose a method for the setting",
+        description:
+          "The profile describes different approaches for different pests and locations. Discuss the site conditions and agree on the proposed scope before treatment.",
+      },
+      {
+        title: "Consider sensitive areas",
+        description:
+          "For settings such as restaurants and hospitals, the profile describes bait as an option where contact pesticides are to be avoided. The suitable approach should be confirmed for the specific site.",
+      },
+      {
+        title: "Confirm treatment and precautions",
+        description:
+          "Products, application details, safety instructions, and current availability are not guaranteed by this page. Ask the company to confirm the proposed treatment and any site-specific precautions before work begins.",
+      },
+    ],
+    guidesDescription:
+      "The pest, the affected area, and the type of premises all help shape a suitable approach. Confirm the proposed method and precautions with the company.",
     process: [
       "Discuss the reported pest concern and the area affected.",
       "Identify the pest and consider the setting, including any sensitive areas.",
@@ -266,6 +321,30 @@ export const services: Service[] = [
       "Workers are briefed on the schedule; the profile describes regular customer communication, feedback collection, on-the-job training, and follow-up.",
       "Cleaning staff receive a stated seven-day training program, followed by on-the-job training and an assessment before project deployment.",
     ],
+    guides: [
+      {
+        title: "Routine cleaning and housekeeping",
+        description:
+          "The profile lists cleaning for corporate, industrial, commercial, and residential premises, with work planned around the customer's requirements and an agreed schedule.",
+      },
+      {
+        title: "Janitorial and support personnel",
+        description:
+          "Listed roles include tea boys, messengers, peons, gardeners, and electricians. Confirm which roles and staffing arrangements are currently available.",
+      },
+      {
+        title: "Specialist cleaning",
+        description:
+          "The service list includes glass cleaning, carpet and upholstery shampooing and extraction, floor scrubbing and polishing, water-reservoir tank cleaning, pavement power washing, and full-premises cleaning.",
+      },
+      {
+        title: "Training, checks, and follow-up",
+        description:
+          "The profile describes a seven-day cleaner training outline, on-the-job training, project coordination, regular customer communication, quality-control sheets, site checks, and follow-up. The actual schedule and scope are agreed with the customer.",
+      },
+    ],
+    guidesDescription:
+      "Cleaning can range from scheduled upkeep to specialist tasks. The work plan is discussed with the customer before staff and schedules are arranged.",
     process: [
       "Analyze the work scope and discuss the customer's requirements.",
       "Prepare a work schedule and consult with the customer to finalize it.",

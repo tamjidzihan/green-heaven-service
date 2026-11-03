@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import {
   ArrowRight,
   Check,
@@ -11,6 +12,9 @@ import { ParallaxBackground } from "../components/common/ParallaxBackground";
 import { ScrollReveal } from "../components/common/ScrollReveal";
 import { Seo } from "../components/common/Seo";
 import { Breadcrumbs } from "../components/navigation/Breadcrumbs";
+import { CleaningServiceDetails } from "../components/services/CleaningServiceDetails";
+import { PestControlServiceDetails } from "../components/services/PestControlServiceDetails";
+import { SecurityServiceDetails } from "../components/services/SecurityServiceDetails";
 import { services } from "../data/services";
 import { NotFoundPage } from "./NotFoundPage";
 
@@ -34,130 +38,179 @@ export function ServiceDetailPage() {
     )
     .slice(0, 3);
 
+  const profileDetails =
+    service.slug === "green-heaven-security-service" ? (
+      <SecurityServiceDetails service={service} />
+    ) : service.slug === "green-heaven-cleaning-service" ? (
+      <CleaningServiceDetails service={service} />
+    ) : service.slug === "green-heaven-pest-control-service" ? (
+      <PestControlServiceDetails service={service} />
+    ) : null;
+
   return (
     <>
       <Seo
         title={`${service.title} | Green Heaven Service`}
         description={service.shortDescription}
       />
-      <section className="detail-hero">
-        <ParallaxBackground src={service.heroImage} />
-        <div className="site-container">
-          <Breadcrumbs current={service.title} />
-          <div className="detail-hero__content">
-            <div>
-              <p className="eyebrow">{isAdditional ? "Listed activity" : "Core service"}</p>
-              <h1>{service.title}</h1>
-              <p>{service.intro}</p>
-              <Link className="button button--frost" to="/contact">
-                Discuss your requirements <ArrowRight aria-hidden="true" size={16} />
-              </Link>
-            </div>
-            <div aria-hidden="true" className="detail-hero__icon">
-              <ServiceIcon size={112} strokeWidth={0.8} />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {service.detailsConfirmed ? (
+      {profileDetails ?? (
         <>
-          {service.offerings.length > 0 && (
-            <section aria-labelledby="service-capabilities" className="section section--bone">
-              <ScrollReveal className="site-container service-detail__capabilities">
+          <section className="detail-hero">
+            <ParallaxBackground src={service.heroImage} />
+            <div className="site-container">
+              <Breadcrumbs current={service.title} />
+              <div className="detail-hero__content">
                 <div>
-                  <p className="eyebrow">Service capabilities</p>
-                  <h2 id="service-capabilities">What the company profile describes.</h2>
-                  <ul className="offering-list">
-                    {service.offerings.map((offering) => (
-                      <li key={offering}>
-                        <Check aria-hidden="true" size={18} />
-                        {offering}
-                      </li>
-                    ))}
-                  </ul>
+                  <p className="eyebrow">{isAdditional ? "Listed activity" : "Core service"}</p>
+                  <h1>{service.title}</h1>
+                  <p>{service.intro}</p>
+                  <Link className="button button--frost" to="/contact">
+                    Discuss your requirements <ArrowRight aria-hidden="true" size={16} />
+                  </Link>
                 </div>
-                {service.approach.length > 0 && (
-                  <aside className="approach-card">
-                    <p className="eyebrow">Operating approach</p>
-                    <h3>Planned around the service and setting.</h3>
-                    <ul>
-                      {service.approach.map((item) => <li key={item}>{item}</li>)}
-                    </ul>
-                  </aside>
-                )}
-              </ScrollReveal>
-            </section>
-          )}
-
-          {service.process && service.process.length > 0 && (
-            <section aria-labelledby="service-process" className="section service-process">
-              <div className="site-container">
-                <ScrollReveal>
-                  <div className="section-heading">
-                    <p className="eyebrow">A documented approach</p>
-                    <h2 id="service-process">How the work is described.</h2>
-                  </div>
-                </ScrollReveal>
-                <ScrollReveal className="service-process__steps" stagger>
-                  {service.process.map((step, index) => (
-                    <article className="service-process__step gh-reveal-item" key={step}>
-                      <span className="service-process__number">
-                        {String(index + 1).padStart(2, "0")}
-                      </span>
-                      <p>{step}</p>
-                    </article>
-                  ))}
-                </ScrollReveal>
+                <div aria-hidden="true" className="detail-hero__icon">
+                  <ServiceIcon size={112} strokeWidth={0.8} />
+                </div>
               </div>
-            </section>
-          )}
+            </div>
+          </section>
 
-          {service.faqs && service.faqs.length > 0 && (
-            <section aria-labelledby="service-faqs" className="section section--bone">
-              <ScrollReveal className="site-container service-faqs">
+          {service.detailsConfirmed ? (
+            <>
+              {service.offerings.length > 0 && (
+                <section aria-labelledby="service-capabilities" className="section section--bone">
+                  <ScrollReveal className="site-container service-detail__capabilities">
+                    <div>
+                      <p className="eyebrow">Service capabilities</p>
+                      <h2 id="service-capabilities">What the company profile describes.</h2>
+                      <ul className="offering-list">
+                        {service.offerings.map((offering) => (
+                          <li key={offering}>
+                            <Check aria-hidden="true" size={18} />
+                            {offering}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    {service.approach.length > 0 && (
+                      <aside className="approach-card">
+                        <p className="eyebrow">Operating approach</p>
+                        <h3>Planned around the service and setting.</h3>
+                        <ul>
+                          {service.approach.map((item) => <li key={item}>{item}</li>)}
+                        </ul>
+                      </aside>
+                    )}
+                  </ScrollReveal>
+                </section>
+              )}
+
+              {service.guides && service.guides.length > 0 && (
+                <section
+                  aria-labelledby="service-guide-heading"
+                  className="section service-guide"
+                >
+                  <div className="site-container">
+                    <ScrollReveal className="section-heading service-guide__heading">
+                      <p className="eyebrow">Service guide</p>
+                      <h2 id="service-guide-heading">What this service can include.</h2>
+                      {service.guidesDescription && (
+                        <p className="section-heading__description">
+                          {service.guidesDescription}
+                        </p>
+                      )}
+                    </ScrollReveal>
+                    <ScrollReveal className="service-guide__grid" stagger>
+                      {service.guides.map((guide, index) => (
+                        <article
+                          className="service-guide-card gh-reveal-item"
+                          key={guide.title}
+                          style={{
+                            "--stagger-delay": `${index * 80}ms`,
+                          } as CSSProperties}
+                        >
+                          <span className="service-guide-card__number">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <h3>{guide.title}</h3>
+                          <p>{guide.description}</p>
+                        </article>
+                      ))}
+                    </ScrollReveal>
+                  </div>
+                </section>
+              )}
+
+              {service.process && service.process.length > 0 && (
+                <section aria-labelledby="service-process" className="section service-process">
+                  <div className="site-container">
+                    <ScrollReveal>
+                      <div className="section-heading">
+                        <p className="eyebrow">A documented approach</p>
+                        <h2 id="service-process">How the work is described.</h2>
+                      </div>
+                    </ScrollReveal>
+                    <ScrollReveal className="service-process__steps" stagger>
+                      {service.process.map((step, index) => (
+                        <article className="service-process__step gh-reveal-item" key={step}>
+                          <span className="service-process__number">
+                            {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <p>{step}</p>
+                        </article>
+                      ))}
+                    </ScrollReveal>
+                  </div>
+                </section>
+              )}
+
+              {service.faqs && service.faqs.length > 0 && (
+                <section aria-labelledby="service-faqs" className="section section--bone">
+                  <ScrollReveal className="site-container service-faqs">
+                    <div>
+                      <p className="eyebrow">Helpful information</p>
+                      <h2 id="service-faqs">Frequently asked questions.</h2>
+                      <p>
+                        Answers reflect the company information currently available.
+                        Confirm project-specific details with the team.
+                      </p>
+                    </div>
+                    <div className="service-faqs__list">
+                      {service.faqs.map(({ question, answer }) => (
+                        <details className="service-faq" key={question}>
+                          <summary>
+                            <span>{question}</span>
+                            <HelpCircle aria-hidden="true" size={19} />
+                          </summary>
+                          <p>{answer}</p>
+                        </details>
+                      ))}
+                    </div>
+                  </ScrollReveal>
+                </section>
+              )}
+            </>
+          ) : (
+            <section className="section section--bone">
+              <ScrollReveal className="site-container additional-note">
+                <ClipboardCheck aria-hidden="true" size={27} />
                 <div>
-                  <p className="eyebrow">Helpful information</p>
-                  <h2 id="service-faqs">Frequently asked questions.</h2>
+                  <p className="eyebrow">Confirming the scope</p>
+                  <h2>Let's discuss what this activity currently includes.</h2>
                   <p>
-                    Answers reflect the company information currently available.
-                    Confirm project-specific details with the team.
+                    The available profile lists this business concern without
+                    detailing its current services, products, operating methods, or
+                    availability. Contact Green Heaven Service to confirm the scope
+                    before making plans.
                   </p>
-                </div>
-                <div className="service-faqs__list">
-                  {service.faqs.map(({ question, answer }) => (
-                    <details className="service-faq" key={question}>
-                      <summary>
-                        <span>{question}</span>
-                        <HelpCircle aria-hidden="true" size={19} />
-                      </summary>
-                      <p>{answer}</p>
-                    </details>
-                  ))}
+                  <Link className="text-link" to="/contact">
+                    Contact Green Heaven Service <ArrowRight aria-hidden="true" size={15} />
+                  </Link>
                 </div>
               </ScrollReveal>
             </section>
           )}
         </>
-      ) : (
-        <section className="section section--bone">
-          <ScrollReveal className="site-container additional-note">
-            <ClipboardCheck aria-hidden="true" size={27} />
-            <div>
-              <p className="eyebrow">Confirming the scope</p>
-              <h2>Let's discuss what this activity currently includes.</h2>
-              <p>
-                The available profile lists this business concern without
-                detailing its current services, products, operating methods, or
-                availability. Contact Green Heaven Service to confirm the scope
-                before making plans.
-              </p>
-              <Link className="text-link" to="/contact">
-                Contact Green Heaven Service <ArrowRight aria-hidden="true" size={15} />
-              </Link>
-            </div>
-          </ScrollReveal>
-        </section>
       )}
 
       {relatedServices.length > 0 && (
