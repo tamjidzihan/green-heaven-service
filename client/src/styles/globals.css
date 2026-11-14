@@ -1884,6 +1884,109 @@ svg {
   line-height: 1.1;
 }
 
+.service-profile {
+  max-width: 920px;
+}
+
+.service-profile h2,
+.service-project__details h2 {
+  margin: 0 0 24px;
+  color: var(--slate);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 450;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}
+
+.service-profile__copy {
+  display: grid;
+  gap: 16px;
+}
+
+.service-profile__copy p {
+  margin: 0;
+  color: #59656e;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.service-project {
+  background:
+    radial-gradient(ellipse 52% 85% at 100% 0%, rgba(var(--brand-deep-rgb), 0.07), transparent 72%),
+    #edf0ec;
+}
+
+.service-project__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  align-items: center;
+  gap: clamp(36px, 7vw, 96px);
+}
+
+.service-project__figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 4px;
+  background: #dce5df;
+}
+
+.service-project__figure img {
+  width: 100%;
+  max-height: 620px;
+  object-fit:contain;
+}
+
+.service-project__figure figcaption {
+  padding: 12px 16px;
+  color: #59656e;
+  font-size: 13px;
+}
+
+.service-project__details h2 {
+  margin-bottom: 14px;
+}
+
+.service-project__address {
+  margin: 0;
+  color: #59656e;
+  line-height: 1.7;
+}
+
+.service-project__details dl {
+  display: grid;
+  gap: 18px;
+  margin: 30px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid #d6dcda;
+}
+
+.service-project__details dl>div {
+  display: grid;
+  gap: 6px;
+}
+
+.service-project__details dt {
+  color: #59656e;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.service-project__details dd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 0;
+}
+
+.service-project__details a {
+  color: var(--color-brand-800);
+  font-weight: 550;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
 .service-guide {
   background:
     radial-gradient(ellipse 52% 85% at 100% 0%, rgba(var(--brand-deep-rgb), 0.07), transparent 72%),
@@ -3679,6 +3782,10 @@ svg {
 @media (max-width: 700px) {
   .site-container {
     width: calc(100% - 36px);
+  }
+
+  .service-project__grid {
+    grid-template-columns: 1fr;
   }
 
   .section {

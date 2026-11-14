@@ -77,6 +77,23 @@ export function ServiceDetailPage() {
 
           {service.detailsConfirmed ? (
             <>
+              {service.companyProfile && (
+                <section
+                  aria-labelledby="company-profile-heading"
+                  className="section section--bone"
+                >
+                  <div className="site-container service-profile">
+                    <p className="eyebrow">Our approach</p>
+                    <h2 id="company-profile-heading">A commitment to quality and trust.</h2>
+                    <div className="service-profile__copy">
+                      {service.companyProfile.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+              )}
+
               {service.offerings.length > 0 && (
                 <section aria-labelledby="service-capabilities" className="section section--bone">
                   <ScrollReveal className="site-container service-detail__capabilities">
@@ -102,6 +119,49 @@ export function ServiceDetailPage() {
                       </aside>
                     )}
                   </ScrollReveal>
+                </section>
+              )}
+
+              {service.project && (
+                <section
+                  aria-labelledby="service-project-heading"
+                  className="section service-project"
+                >
+                  <div className="site-container service-project__grid">
+                    <figure className="service-project__figure">
+                      <img
+                        alt={service.project.imageAlt}
+                        loading="lazy"
+                        src={service.project.image}
+                      />
+                      <figcaption>{service.project.name}</figcaption>
+                    </figure>
+                    <div className="service-project__details">
+                      <p className="eyebrow">Featured project</p>
+                      <h2 id="service-project-heading">{service.project.name}</h2>
+                      <p className="service-project__address">{service.project.address}</p>
+                      <dl>
+                        <div>
+                          <dt>Hotline</dt>
+                          <dd>
+                            <a href={`tel:${service.project.hotline}`}>
+                              {service.project.hotline}
+                            </a>
+                          </dd>
+                        </div>
+                        <div>
+                          <dt>Land wanted</dt>
+                          <dd>
+                            {service.project.landWantedPhones.map((phone) => (
+                              <a href={`tel:${phone}`} key={phone}>
+                                {phone}
+                              </a>
+                            ))}
+                          </dd>
+                        </div>
+                      </dl>
+                    </div>
+                  </div>
                 </section>
               )}
 

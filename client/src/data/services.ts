@@ -59,6 +59,15 @@ export type Service = {
   faqs?: ServiceFaq[];
   homepageFeature?: HomepageFeature;
   detailsConfirmed?: boolean;
+  companyProfile?: string[];
+  project?: {
+    name: string;
+    image: string;
+    imageAlt: string;
+    address: string;
+    hotline: string;
+    landWantedPhones: string[];
+  };
 };
 
 const scopeToConfirm =
@@ -87,6 +96,22 @@ export const services: Service[] = [
       "Engineers and planning teams work toward completing projects before the agreed apartment handover time.",
       "The company identifies quality, trust, commitment, and dependability as its business ethics.",
     ],
+    companyProfile: [
+      "Rafi Real Estat Ltd. is one of the few real estate companies striving to complete building projects before the apartment handover time agreed with customers. Its skilled engineers and efficient planning and organizing team work to establish buildings with user-friendly utilities and environmentally viable concepts.",
+      "The company is mainly engaged in developing luxurious residential buildings for its customers using better-quality materials.",
+      "In a short period, Rafi Real Estat Ltd. has gained a good track record with clients, landowners, suppliers, and other stakeholders through its commitment, honesty, and sincerity. Its projects feature earthquake protection and environmentally friendly concepts, and use innovative designs and the latest housing technology to support the safety and security of all parties.",
+      "The company’s philosophy is to make a serious commitment to clients and customers, earning their trust as an intimate associate and partner for their present and future building solutions. Quality, trust, commitment, and dependability are its business ethics.",
+      "Safe housing is our commitment.",
+    ],
+    project: {
+      name: "Rafi Shwapno Kutir",
+      image: "/assets/rafi-shwapno-kutir.png",
+      imageAlt: "Rafi Shwapno Kutir residential building",
+      address:
+        "Road No. 02, House No. 01, Modhu Haji Riverview, Keraniganj, Dhaka.",
+      hotline: "+8809697421317",
+      landWantedPhones: ["+8801713481317", "+8801711348400"],
+    },
     homepageFeature: {
       order: 1,
       eyebrow: "Residential development",
