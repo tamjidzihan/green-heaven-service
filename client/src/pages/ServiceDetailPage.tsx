@@ -1,10 +1,13 @@
 import type { CSSProperties } from "react";
 import {
   ArrowRight,
+  ArrowUpRight,
   Check,
   ClipboardCheck,
   HelpCircle,
   ListChecks,
+  MapPin,
+  Phone,
 } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import { ContactCta } from "../components/common/ContactCta";
@@ -128,38 +131,56 @@ export function ServiceDetailPage() {
                   className="section service-project"
                 >
                   <div className="site-container service-project__grid">
-                    <figure className="service-project__figure">
-                      <img
-                        alt={service.project.imageAlt}
-                        loading="lazy"
-                        src={service.project.image}
-                      />
-                      <figcaption>{service.project.name}</figcaption>
-                    </figure>
+                    <div className="service-project__visual">
+                      <div className="service-project__visual-meta">
+                        <span>Project highlight</span>
+                        <span>Dhaka, Bangladesh</span>
+                      </div>
+                      <figure className="service-project__figure">
+                        <img
+                          alt={service.project.imageAlt}
+                          loading="lazy"
+                          src={service.project.image}
+                        />
+                        <figcaption>
+                          <span>{service.project.name}</span>
+                          <span>Rafi Real Estat Ltd.</span>
+                        </figcaption>
+                      </figure>
+                      <p className="service-project__visual-note">
+                        Safe housing is our commitment.
+                      </p>
+                    </div>
                     <div className="service-project__details">
                       <p className="eyebrow">Featured project</p>
                       <h2 id="service-project-heading">{service.project.name}</h2>
-                      <p className="service-project__address">{service.project.address}</p>
-                      <dl>
+                      <div className="service-project__location">
+                        <MapPin aria-hidden="true" size={20} />
                         <div>
-                          <dt>Hotline</dt>
-                          <dd>
-                            <a href={`tel:${service.project.hotline}`}>
-                              {service.project.hotline}
-                            </a>
-                          </dd>
+                          <span>Project location</span>
+                          <address>{service.project.address}</address>
                         </div>
-                        <div>
-                          <dt>Land wanted</dt>
-                          <dd>
+                      </div>
+                      <div className="service-project__contacts">
+                        <div className="service-project__contact">
+                          <p><Phone aria-hidden="true" size={16} /> Hotline</p>
+                          <a href={`tel:${service.project.hotline}`}>
+                            {service.project.hotline}
+                            <ArrowUpRight aria-hidden="true" size={16} />
+                          </a>
+                        </div>
+                        <div className="service-project__contact">
+                          <p><Phone aria-hidden="true" size={16} /> Land wanted</p>
+                          <div>
                             {service.project.landWantedPhones.map((phone) => (
                               <a href={`tel:${phone}`} key={phone}>
                                 {phone}
+                                <ArrowUpRight aria-hidden="true" size={16} />
                               </a>
                             ))}
-                          </dd>
+                          </div>
                         </div>
-                      </dl>
+                      </div>
                     </div>
                   </div>
                 </section>
