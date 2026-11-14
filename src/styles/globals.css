@@ -1911,80 +1911,179 @@ svg {
 }
 
 .service-project {
+  position: relative;
+  overflow: hidden;
   background:
-    radial-gradient(ellipse 52% 85% at 100% 0%, rgba(var(--brand-deep-rgb), 0.07), transparent 72%),
-    #edf0ec;
+    radial-gradient(ellipse 54% 90% at 100% 0%, rgba(84, 150, 103, 0.16), transparent 72%),
+    #102a1d;
+  color: #f5f7f2;
 }
 
 .service-project__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, 0.92fr);
   align-items: center;
-  gap: clamp(36px, 7vw, 96px);
+  gap: clamp(42px, 8vw, 112px);
+}
+
+.service-project__visual-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+  color: #b7c9bc;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .service-project__figure {
+  position: relative;
   margin: 0;
   overflow: hidden;
-  border-radius: 4px;
-  background: #dce5df;
+  border: 1px solid rgba(245, 247, 242, 0.2);
+  background:
+    radial-gradient(ellipse at 50% 35%, #f8faf2, #dce7dc 75%);
 }
 
 .service-project__figure img {
   width: 100%;
-  max-height: 620px;
-  object-fit:contain;
+  height: clamp(390px, 48vw, 590px);
+  object-fit: contain;
 }
 
 .service-project__figure figcaption {
-  padding: 12px 16px;
-  color: #59656e;
-  font-size: 13px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 54px 22px 18px;
+  background: linear-gradient(0deg, rgba(10, 29, 19, 0.92), transparent);
+  color: #fff;
+}
+
+.service-project__figure figcaption span:first-child {
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  font-weight: 550;
+  letter-spacing: -0.02em;
+}
+
+.service-project__figure figcaption span:last-child {
+  color: #d3ded5;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.service-project__visual-note {
+  margin: 15px 0 0;
+  color: #b7c9bc;
+  font-size: 12px;
+  letter-spacing: 0.035em;
+}
+
+.service-project__details .eyebrow {
+  margin-bottom: 17px;
+  color: #a7d6b3;
 }
 
 .service-project__details h2 {
-  margin-bottom: 14px;
-}
-
-.service-project__address {
+  max-width: 580px;
   margin: 0;
-  color: #59656e;
-  line-height: 1.7;
+  color: #f5f7f2;
+  font-size: clamp(2.6rem, 5vw, 4.8rem);
+  font-weight: 430;
+  letter-spacing: -0.06em;
+  line-height: 0.98;
 }
 
-.service-project__details dl {
+.service-project__location {
   display: grid;
-  gap: 18px;
-  margin: 30px 0 0;
-  padding-top: 24px;
-  border-top: 1px solid #d6dcda;
+  grid-template-columns: 22px minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
+  margin-top: 33px;
+  padding-top: 23px;
+  border-top: 1px solid rgba(245, 247, 242, 0.18);
+  color: #a7d6b3;
 }
 
-.service-project__details dl>div {
-  display: grid;
-  gap: 6px;
+.service-project__location svg {
+  margin-top: 2px;
 }
 
-.service-project__details dt {
-  color: #59656e;
-  font-size: 12px;
+.service-project__location span {
+  display: block;
+  margin-bottom: 7px;
+  color: #b7c9bc;
+  font-size: 10px;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.13em;
   text-transform: uppercase;
 }
 
-.service-project__details dd {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 18px;
-  margin: 0;
+.service-project__location address {
+  color: #f5f7f2;
+  font-size: 15px;
+  font-style: normal;
+  line-height: 1.65;
 }
 
-.service-project__details a {
-  color: var(--color-brand-800);
+.service-project__contacts {
+  display: grid;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.service-project__contact {
+  padding: 16px 18px;
+  border: 1px solid rgba(245, 247, 242, 0.17);
+  background: rgba(245, 247, 242, 0.045);
+  transition: background var(--dur-fast) var(--ease-out-expo),
+    border-color var(--dur-fast) var(--ease-out-expo);
+}
+
+.service-project__contact p {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0 0 11px;
+  color: #b7c9bc;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.service-project__contact p svg {
+  color: #a7d6b3;
+}
+
+.service-project__contact> a,
+.service-project__contact>div a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #fff;
+  font-size: 14px;
   font-weight: 550;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 3px;
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+
+.service-project__contact> a:hover,
+.service-project__contact>div a:hover {
+  text-decoration: underline;
+}
+
+.service-project__contact>div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 20px;
 }
 
 .service-guide {
